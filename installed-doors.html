@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farzaa</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/font-awesome/all.min.css">
+    <link rel="stylesheet" href="assets/vendor/font-awesome/sharp-regular.min.css">
+    <link rel="stylesheet" href="assets/vendor/font-awesome/sharp-solid.min.css">
+    <link rel="stylesheet" href="assets/vendor/modal-video/modal-video.min.css">
+    <link rel="stylesheet" href="assets/vendor/mean-menu/meanmenu.min.css">
+    <link rel="stylesheet" href="assets/vendor/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/vendor/slick/slick.css">
+    <link rel="stylesheet" href="assets/vendor/nice-select/nice-select.css">
+    <link rel="stylesheet" href="assets/vendor/noui-slider/nouislider.min.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- PRE LOADER STARTS HERE -->
+    <div id="pre-loader">
+        <div id="loader"></div>
+    </div>
+    <!-- PRE LOADER ENDS HERE -->
+
+    <!-- fz-offcanvas-main-nav-wrapper start -->
+    <div class="fz-offcanvas-main-nav-wrapper">
+        <button class="fz-button-close"><i class="fa-thin fa-xmark"></i></button>
+        <div class="fz-offcanvas-main-nav-wrapper-sections">
+            <div class="fz-offcanvas-main-nav-section">
+                <div class="mobile-menu-updated"></div>
+            </div>
+            <div class="fz-offcanvas-main-sideinfo-section">
+
+                <div class="fz-offcanvas-main-sideinfo">
+                    <div class="fz-offcanvas-main-search mb-45">
+                        <form action="#">
+                            <input type="search" name="s" value="" placeholder="Search Product" id="search-input">
+                            <input type="hidden" name="post_type" value="product" />
+                            <button type="submit"><i class="fa-light fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>
+                    <div class="fz-offcanvas-main-actions mb-15">
+                        <a href="cart.html"><span class="fz-off-actions-icon"><i class="fa-thin fa-bag-shopping"></i>
+                            </span> <span class="fz-off-actions-text"><span>View Cart</span><span>View Cart</span></span></a>
+                        <a href="#"><i class="fa-thin fa-heart"></i> <span class="fz-off-actions-text"><span>View Wishlist</span><span>View Wishlist</span></span></a>
+                    </div>
+
+                    <div class="fz-offcanvas-main-contacts">
+                        <h4 class="fz-offcanvas-main-contacts-title mb-30">Get In Touch</h4>
+
+                        <ul class="fz-offcanvas-main-contacts-list">
+                            <li>
+                                <i class="fa-thin fa-location-dot"></i>
+                                <span class="fz-offcanvas-main-contact-text">989 Bel Meadow Drive Los Angeles, CA 90017</span>
+                            </li>
+                            <li>
+                                <i class="fa-thin fa-phone-flip"></i>
+                                <span class="fz-offcanvas-main-contact-text">
+                                    <a href="tel:(+1)909-407-2988">(+1) 909-407-2988</a> <br>
+                                    <a href="tel:(+1)470-142-2412">(+1) 470-142-2412</a>
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-thin fa-clock"></i>
+                                <span class="fz-offcanvas-main-contact-text">Store Hours:<br><span class="fz-opentime">Mon - Sat : 8am - 5pm</span></span>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="fz-offcanvas-main-socials mt-45">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fz-offcanvas-main-nav-wrapper end-->
+
+
+    <!-- CART MODAL START -->
+    <div class="overlay"></div>
+    <div class="cart-area cart-area-modal" id="cart-area-modal">
+        <div class="cart__header">
+            <h3 class="cart__title">Shopping cart</h3>
+            <button class="cart-area-modal-close-btn"><i class="fa-regular fa-xmark"></i></button>
+        </div>
+        <div class="cart__body">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>price</th>
+                        <th>quantity</th>
+                        <th>total</th>
+                        <th>remove</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="cart-product">
+                                <div class="cart-product__img">
+                                    <img src="assets/images/fz-3-pro-1.png" alt="Product Image">
+                                </div>
+                                <div class="cart-product__txt">
+                                    <h6><a href="shop-details.html">Contemporary 4 Panel White Primed Door (40mm)</a></h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$55.00</td>
+                        <td>
+                            <div class="cart-product__quantity">
+                                <div class="cart-product__quantity-btns">
+                                    <button class="cart-product__minus"><i class="fa-light fa-minus"></i></button>
+                                    <button class="cart-product__plus"><i class="fa-light fa-plus"></i></button>
+                                </div>
+                                <input type="number" name="product-quantity-input" class="cart-product-quantity-input" min="0" value="1" readonly="">
+                            </div>
+                        </td>
+                        <td>$55.00</td>
+                        <td>
+                            <button class="item-remove-btn">
+                                <i class="fa-light fa-xmark"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="cart-product">
+                                <div class="cart-product__img">
+                                    <img src="assets/images/fz-3-pro-2.png" alt="Product Image">
+                                </div>
+                                <div class="cart-product__txt">
+                                    <h6><a href="shop-details.html">Contemporary 4 Panel White Primed Door (40mm)</a></h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$55.00</td>
+
+                        <td>
+                            <div class="cart-product__quantity">
+                                <div class="cart-product__quantity-btns">
+                                    <button class="cart-product__minus"><i class="fa-light fa-minus"></i></button>
+                                    <button class="cart-product__plus"><i class="fa-light fa-plus"></i></button>
+                                </div>
+                                <input type="number" name="product-quantity-input" class="cart-product-quantity-input" min="0" value="1" readonly="">
+                            </div>
+                        </td>
+                        <td>$55.00</td>
+                        <td>
+                            <button class="item-remove-btn">
+                                <i class="fa-light fa-xmark"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="cart-left-actions d-flex justify-content-end">
+                <a href="cart.html" class="fz-1-banner-btn update-cart-btn">View Full cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- CART MODAL END -->
+
+
+    <!-- WISHLIST MODAL START -->
+    <div class="cart-area cart-area-modal fz-wishlist-modal">
+        <div class="cart__header">
+            <h3 class="cart__title">Your Wishlist</h3>
+            <button class="cart-area-modal-close-btn"><i class="fa-regular fa-xmark"></i></button>
+        </div>
+
+        <div class="cart__body">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>price</th>
+                        <th>action</th>
+                        <th>total</th>
+                        <th>remove</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="cart-product">
+                                <div class="cart-product__img">
+                                    <img src="assets/images/fz-3-pro-1.png" alt="Product Image">
+                                </div>
+                                <div class="cart-product__txt">
+                                    <h6><a href="shop-details.html">Contemporary 4 Panel White Primed Door (40mm)</a></h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$55.00</td>
+                        <td>
+                            <div class="fz-wishlist-action">
+                                <button class="fz-add-to-cart-btn fz-1-banner-btn fz-wishlist-action-btn">Add to cart</button>
+                            </div>
+                        </td>
+                        <td>$55.00</td>
+                        <td>
+                            <button class="item-remove-btn">
+                                <i class="fa-light fa-xmark"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="cart-product">
+                                <div class="cart-product__img">
+                                    <img src="assets/images/fz-3-pro-2.png" alt="Product Image">
+                                </div>
+                                <div class="cart-product__txt">
+                                    <h6><a href="shop-details.html">Contemporary 4 Panel White Primed Door (40mm)</a></h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$55.00</td>
+
+                        <td>
+                            <div class="fz-wishlist-action">
+                                <button class="fz-add-to-cart-btn fz-1-banner-btn fz-wishlist-action-btn">Add to cart</button>
+                            </div>
+                        </td>
+                        <td>$55.00</td>
+                        <td>
+                            <button class="item-remove-btn">
+                                <i class="fa-light fa-xmark"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="cart-left-actions d-flex justify-content-end">
+                <a href="cart.html" class="fz-1-banner-btn update-cart-btn">Go to cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- WISHLIST MODAL END -->
+
+
+
+    <!-- HEADER SECTION STARTS HERE -->
+    <header class="fz-header-section fz-1-header-section">
+        <div class="top-header">
+          <div class="container">
+            <div class="row gy-3 align-items-center">
+              <div class="col-lg-4 d-lg-block d-none">
+                <span class="mail-address">
+                  <a href="mailto:info@webmail.com">
+                    <i class="fa-regular fa-envelope-open"></i>
+                    info@webmail.com
+                  </a>
+                </span>
+              </div>
+  
+              <div class="col-lg-4 col-md-6">
+                <h6>Seçilmiş məhsullara 30%-dək endirim. İndi Al.</h6>
+              </div>
+  
+              <div class="col-lg-4 col-md-6">
+                <div class="top-header-right-actions">
+                  <div class="top-header-socials">
+                    <a
+                      href="https://www.facebook.com/QapiDunyasi1?mibextid=ZbWKwL"
+                      target="_blank"
+                      ><i class="fa-brands fa-facebook-f"></i
+                    ></a>
+                    <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
+                    <a
+                      href="https://www.instagram.com/dunya.qapilari__/?igshid=MzNlNGNkZWQ4Mg%3D%3D"
+                      target="_blank"
+                      ><i class="fa-brands fa-instagram"></i
+                    ></a>
+                    <!-- <a href="#"><i class="fa-brands fa-youtube"></i></a> -->
+                    <a
+                      href="https://www.tiktok.com/@dunya.qapilari?_t=8dpUEL2mnRp&_r=1"
+                      target="_blank"
+                      ><i class="fa-brands fa-tiktok"></i
+                    ></a>
+                  </div>
+  
+                  <select name="currency" id="top-header-currency-dropdown">
+                    <option value="USD">AZN</option>
+                    <!-- <option value="Taka">Taka</option>
+                                  <option value="Euro">Euro</option>
+                                  <option value="Rupee">Rupee</option> -->
+                  </select>
+  
+                  <select name="language" id="top-header-language-dropdown">
+                    <option value="English">Az</option>
+                    <!-- <option value="Bangla">Bangla</option>
+                                  <option value="French">French</option>
+                                  <option value="Hindi">Hindi</option> -->
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="bottom-header to-be-fixed">
+          <div class="container">
+            <div class="row g-0 align-items-center">
+              <div class="col-5 header-nav-container d-lg-block d-none">
+                <nav class="fz-header-nav">
+                  <ul class="align-items-center">
+                    <li class="fz-dropdown fz-nav-item">
+                      <a href="/index.html" class="fz-nav-link">
+                        <span>Ana səhifə</span>
+                        <!-- <i class="fa-regular fa-plus"></i> -->
+                      </a>
+  
+                      <!-- <ul class="fz-submenu">
+                                          <li><a href="index.html" class="fz-nav-link fz-submenu-nav-link">Door Shop</a></li>
+                                          <li><a href="index-2.html" class="fz-nav-link fz-submenu-nav-link">Jewelry Shop</a></li>
+                                          <li><a href="index-3.html" class="fz-nav-link fz-submenu-nav-link">Cake Shop</a></li>
+                                      </ul> -->
+                    </li>
+                    <li class="fz-dropdown fz-nav-item">
+                      <a href="shop.html" class="fz-nav-link">
+                        Kataloq
+                        <!-- <i class="fa-regular fa-plus"></i> -->
+                      </a>
+  
+                      <!-- <ul class="fz-submenu">
+                                          <li><a href="shop.html" class="fz-nav-link fz-submenu-nav-link">Shop</a></li>
+                                          <li><a href="shop-details.html" class="fz-nav-link fz-submenu-nav-link">shop details</a></li>
+                                      </ul> -->
+                    </li>
+                    <li class="fz-dropdown fz-nav-item">
+                      <a href="qapiolchuler.html" class="fz-nav-link">
+                        Ölçülər
+                        <!-- <i class="fa-regular fa-plus"></i> -->
+                      </a>
+  
+                      <!-- <ul class="fz-submenu">
+                                          <li><a href="about.html" class="fz-nav-link fz-submenu-nav-link">about</a></li>
+                                          <li><a href="faq.html" class="fz-nav-link fz-submenu-nav-link">FAQ</a></li>
+                                          <li><a href="cart.html" class="fz-nav-link fz-submenu-nav-link">cart</a></li>
+                                          <li><a href="account.html" class="fz-nav-link fz-submenu-nav-link">account</a></li>
+                                          <li><a href="checkout.html" class="fz-nav-link fz-submenu-nav-link">Checkout</a></li>
+                                      </ul> -->
+                    </li>
+                    <li class="fz-dropdown fz-nav-item">
+                      <a href="installed-doors.html" class="fz-nav-link"
+                        >Nümunə İşlərimiz
+                        <!-- <i class="fa-regular fa-plus"></i> -->
+                      </a>
+  
+                      <!-- <ul class="fz-submenu">
+                                          <li><a href="blog.html" class="fz-nav-link fz-submenu-nav-link">Blog</a></li>
+                                          <li><a href="blog-details.html" class="fz-nav-link fz-submenu-nav-link">Blog-details</a></li>
+                                      </ul> -->
+                    </li>
+                    <li class="fz-nav-item">
+                      <a href="contact.html" class="fz-nav-link"> Ünvan </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+  
+              <div class="col-lg-2 col-md-6 col-9">
+                <div class="fz-logo-container text-lg-center text-start">
+                  <a href="index.html">
+                    <img
+                      src="assets/images/logo/door-logo-white_bg.svg"
+                      alt="logo"
+                      class="fz-logo"
+                    />
+                  </a>
+                </div>
+              </div>
+  
+              <div class="col-lg-5 col-md-6 col-3">
+                <div class="fz-header-right-content">
+                  <!-- <form action="#" class="bottom-header-search-form d-none d-sm-flex">
+                                  <input type="text" name="search" id="bottom-header-search-input" placeholder="Search keyword">
+                                  <button type="submit"><i class="fa-regular fa-magnifying-glass"></i></button>
+                              </form> -->
+  
+                  <ul
+                    class="fz-header-right-actions d-flex align-items-center justify-content-end"
+                  >
+                    <!-- <li>
+                      <button class="fz-header-wishlist-btn d-none d-lg-block">
+                        Bəyəndiklərim
+                        <i class="fa-light fa-heart"></i>
+                      </button>
+                    </li> -->
+                      <!-- <li>
+                                      <button class="fz-header-cart-btn d-none d-lg-block">
+                                          <i class="fa-light fa-shopping-bag"></i>
+                                          <span class="count">0</span>
+                                      </button>
+                                  </li> -->
+                    <li class="d-block d-lg-none">
+                      <a role="button" class="fz-hamburger"
+                        ><i class="fa-light fa-bars-sort"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    <!-- HEADER SECTION ENDS HERE -->
+
+
+    <!-- BREADCRUMB AREA STARTS HERE -->
+    <div class="fz-inner-page-breadcrumb">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-txt">
+                        <h1>Nümunə İşlərimiz</h1>
+                        <ul class="fz-inner-page-breadcrumb-nav">
+                            <li><a href="index.html">Ana səhifə</a></li>
+                            <li class="current-page">Nümunə İşlərimiz</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BREADCRUMB AREA ENDS HERE -->
+
+
+    <div class="shop-area">
+        <div class="container">
+            <div class="row gy-5 justify-content-center">
+                <div class="col-xl-9 col-lg-8 order-0 order-lg-1">
+
+                    <!-- PRODUCTS -->
+                    <div class="fz-inner-products-container">
+                        <div class="row">
+                            <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+                                <div class="fz-1-single-product">
+                                    <div class="fz-single-product__img">
+                                        <img src="assets/images/fz-3-pro-2.png" alt="Product Image">
+                                        <div class="fz-single-product__actions">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="fz-single-product__txt">
+                                        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+                                        <a href="shop-details.html" class="fz-single-product__title">Modern Fir Door</a>
+                                        <div class="fz-single-product__price-rating">
+                                            <p class="fz-single-product__price">
+                                                <span class="current-price">$740.00</span>
+                                            </p>
+
+                                            <div class="rating list-view-text">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-light fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <p class="fz-single-product__desc list-view-text">
+                                            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+                                            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+                                        </p>
+
+                                        <div class="fz-single-product__actions list-view-text">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+                                <div class="fz-1-single-product">
+                                    <div class="fz-single-product__img">
+                                        <img src="assets/images/fz-3-pro-3.png" alt="Product Image">
+                                        <div class="fz-single-product__actions">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="fz-single-product__txt">
+                                        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+                                        <a href="shop-details.html" class="fz-single-product__title">Modern Fir Door</a>
+                                        <div class="fz-single-product__price-rating">
+                                            <p class="fz-single-product__price">
+                                                <span class="current-price">$740.00</span>
+                                            </p>
+
+                                            <div class="rating list-view-text">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-light fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <p class="fz-single-product__desc list-view-text">
+                                            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+                                            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+                                        </p>
+
+                                        <div class="fz-single-product__actions list-view-text">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+                                <div class="fz-1-single-product">
+                                    <div class="fz-single-product__img">
+                                        <img src="assets/images/fz-3-pro-4.png" alt="Product Image">
+                                        <div class="fz-single-product__actions">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="fz-single-product__txt">
+                                        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+                                        <a href="shop-details.html" class="fz-single-product__title">Modern Fir Door</a>
+                                        <div class="fz-single-product__price-rating">
+                                            <p class="fz-single-product__price">
+                                                <span class="current-price">$740.00</span>
+                                            </p>
+
+                                            <div class="rating list-view-text">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-light fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <p class="fz-single-product__desc list-view-text">
+                                            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+                                            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+                                        </p>
+
+                                        <div class="fz-single-product__actions list-view-text">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+                                <div class="fz-1-single-product">
+                                    <div class="fz-single-product__img">
+                                        <img src="assets/images/fz-3-cat-5.png" alt="Product Image">
+                                        <div class="fz-single-product__actions">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="fz-single-product__txt">
+                                        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+                                        <a href="shop-details.html" class="fz-single-product__title">Modern Fir Door</a>
+                                        <div class="fz-single-product__price-rating">
+                                            <p class="fz-single-product__price">
+                                                <span class="current-price">$740.00</span>
+                                            </p>
+
+                                            <div class="rating list-view-text">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-light fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <p class="fz-single-product__desc list-view-text">
+                                            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+                                            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+                                        </p>
+
+                                        <div class="fz-single-product__actions list-view-text">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+                                <div class="fz-1-single-product">
+                                    <div class="fz-single-product__img">
+                                        <img src="assets/images/fz-3-cat-4.png" alt="Product Image">
+                                        <div class="fz-single-product__actions">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="fz-single-product__txt">
+                                        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+                                        <a href="shop-details.html" class="fz-single-product__title">Modern Fir Door</a>
+                                        <div class="fz-single-product__price-rating">
+                                            <p class="fz-single-product__price">
+                                                <span class="current-price">$740.00</span>
+                                            </p>
+
+                                            <div class="rating list-view-text">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-light fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <p class="fz-single-product__desc list-view-text">
+                                            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+                                            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+                                        </p>
+
+                                        <div class="fz-single-product__actions list-view-text">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+                                <div class="fz-1-single-product">
+                                    <div class="fz-single-product__img">
+                                        <img src="assets/images/fz-3-cat-4.png" alt="Product Image">
+                                        <div class="fz-single-product__actions">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="fz-single-product__txt">
+                                        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+                                        <a href="shop-details.html" class="fz-single-product__title">Modern Fir Door</a>
+                                        <div class="fz-single-product__price-rating">
+                                            <p class="fz-single-product__price">
+                                                <span class="current-price">$740.00</span>
+                                            </p>
+
+                                            <div class="rating list-view-text">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-light fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <p class="fz-single-product__desc list-view-text">
+                                            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+                                            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+                                        </p>
+
+                                        <div class="fz-single-product__actions list-view-text">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+                                <div class="fz-1-single-product">
+                                    <div class="fz-single-product__img">
+                                        <img src="assets/images/fz-3-cat-3.png" alt="Product Image">
+                                        <div class="fz-single-product__actions">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="fz-single-product__txt">
+                                        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+                                        <a href="shop-details.html" class="fz-single-product__title">Modern Fir Door</a>
+                                        <div class="fz-single-product__price-rating">
+                                            <p class="fz-single-product__price">
+                                                <span class="current-price">$740.00</span>
+                                            </p>
+
+                                            <div class="rating list-view-text">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-light fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <p class="fz-single-product__desc list-view-text">
+                                            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+                                            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+                                        </p>
+
+                                        <div class="fz-single-product__actions list-view-text">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+                                <div class="fz-1-single-product">
+                                    <div class="fz-single-product__img">
+                                        <img src="assets/images/fz-3-cat-2.png" alt="Product Image">
+                                        <div class="fz-single-product__actions">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="fz-single-product__txt">
+                                        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+                                        <a href="shop-details.html" class="fz-single-product__title">Modern Fir Door</a>
+                                        <div class="fz-single-product__price-rating">
+                                            <p class="fz-single-product__price">
+                                                <span class="current-price">$740.00</span>
+                                            </p>
+
+                                            <div class="rating list-view-text">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-light fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <p class="fz-single-product__desc list-view-text">
+                                            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+                                            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+                                        </p>
+
+                                        <div class="fz-single-product__actions list-view-text">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+                                <div class="fz-1-single-product">
+                                    <div class="fz-single-product__img">
+                                        <img src="assets/images/fz-3-cat-1.png" alt="Product Image">
+                                        <div class="fz-single-product__actions">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="fz-single-product__txt">
+                                        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+                                        <a href="shop-details.html" class="fz-single-product__title">Modern Fir Door</a>
+                                        <div class="fz-single-product__price-rating">
+                                            <p class="fz-single-product__price">
+                                                <span class="current-price">$740.00</span>
+                                            </p>
+
+                                            <div class="rating list-view-text">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-light fa-star"></i>
+                                            </div>
+                                        </div>
+
+                                        <p class="fz-single-product__desc list-view-text">
+                                            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+                                            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+                                        </p>
+
+                                        <div class="fz-single-product__actions list-view-text">
+                                            <button class="fz-add-to-wishlist-btn">
+                                                <span class="btn-txt">add To wishlist</span>
+                                                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-cart-btn">
+                                                <span class="btn-txt">add To cart</span>
+                                                <span class="btn-icon"><i class="fa-light fa-cart-shopping"></i></span>
+                                            </button>
+
+                                            <button class="fz-add-to-compare-btn">
+                                                <span class="btn-txt">select to compare</span>
+                                                <span class="btn-icon"><i class="fa-light fa-arrow-right-arrow-left"></i></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PRODUCTS -->
+
+                    <nav class="fz-shop-pagination">
+                        <ul class="page-numbers">
+                            <li>
+                                <a href="#" class="page-number-btn current"><span aria-current="page" class="page-number current">01</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="page-number-btn"><span aria-current="page" class="page-number">02</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="page-number-btn"><span aria-current="page" class="last-page"><i class="fa-light fa-angle-double-right"> </i></span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION STARTS HERE -->
+    <footer class="fz-footer-section fz-1-footer-section">
+        <div class="fz-footer-top">
+            <div class="container">
+                <div class="row gy-md-5 gy-4 justify-content-center justify-content-lg-between">
+                    <div class="col-xxl-4 col-lg-12 col-md-8">
+                        <div class="fz-footer-about fz-footer-widget">
+                            <div class="fz-logo fz-footer-widget__title">
+                                <a href="index.html"><img src="assets/images/logo-3.png" alt="logo"></a>
+                            </div>
+                            <p class="fz-footer-about__txt">There Are Many Different Styles Of Including Aviator, Wayfarer, Cat-Eye, Round, Some Sunglasses Also Have Polarized Lenses</p>
+                            <img src="assets/images/card.png" alt="Pyament Methods" class="fz-payment-methods">
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-2 col-lg-3 col-md-4 col-6 col-xxs-12">
+                        <div class="fz-footer-widget">
+                            <h5 class="fz-footer-widget__title">Ways to Shop</h5>
+                            <ul>
+                                <li><a href="#">Shop on Facebook</a></li>
+                                <li><a href="#">Shop on Ebay</a></li>
+                                <li><a href="#">Shop by Category</a></li>
+                                <li><a href="#">Shop All</a></li>
+                                <li><a href="#">Coupons and Discounts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-2 col-lg-3 col-md-4 col-6 col-xxs-12">
+                        <div class="fz-footer-widget">
+                            <h5 class="fz-footer-widget__title">Customer Service</h5>
+                            <ul>
+                                <li><a href="#">Shipping and Returns</a></li>
+                                <li><a href="#">Product Care</a></li>
+                                <li><a href="#">Returns & Policy</a></li>
+                                <li><a href="#">Warranty & Lifetime Service</a></li>
+                                <li><a href="#">Jewelry Care Instruction</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-2 col-lg-3 col-md-4 col-6 col-xxs-12">
+                        <div class="fz-footer-widget">
+                            <h5 class="fz-footer-widget__title">Quick Links</h5>
+                            <ul>
+                                <li><a href="#">Our Story</a></li>
+                                <li><a href="#">Blog & Press</a></li>
+                                <li><a href="#">Order History</a></li>
+                                <li><a href="#">Wish List</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-2 col-lg-3 col-md-4 col-6 col-xxs-12">
+                        <div class="fz-footer__contact-info">
+                            <h5 class="fz-footer-widget__title">Store Address</h5>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fa-light fa-location-dot"></i> 16 Rr 2, Ketchikan, Alaska 99901, USA</a>
+                                </li>
+                                <li>
+                                    <a href="tel:9072254144"><i class="fa-light fa-phone"></i> (907) 225-4144</a>
+                                </li>
+                                <li>
+                                    <a href="mailto:info@webmail.com"><i class="fa-light fa-envelope-open-text"></i>info@webmail.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fz-footer-bottom">
+            <div class="container">
+                <div class="row gy-4 align-items-center">
+                    <div class="col-md-6 col-12">
+                        <p class="fz-copyright">
+                            &copy;
+                            <script>document.write(new Date().getFullYear())</script> Design & Developed by <b>CodeBasket</b>
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                        <div class="fz-footer-socials">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION STARTS HERE -->
+
+    <script src="assets/vendor/jquery/jquery-3.6.3.min.js"></script>
+    <script src="assets/vendor/modal-video/jquery-modal-video.min.js"></script>
+    <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/vendor/gsap/gsap.min.js"></script>
+    <script src="assets/vendor/syotimer/jquery.syotimer.min.js"></script>
+    <script src="assets/vendor/nice-select/jquery.nice-select.min.js"></script>
+    <script src="assets/vendor/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/mean-menu/jquery.meanmenu.min.js"></script>
+    <script src="assets/vendor/slick/slick.min.js"></script>
+
+    <script src="assets/vendor/noui-slider/nouislider.min.js"></script>
+    <script src="assets/js/portfolioPage.js"></script>
+</body>
+
+</html>
