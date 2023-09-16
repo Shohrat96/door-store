@@ -4632,7 +4632,7 @@ a.fz-hamburger {
 }
 
 .subs-section {
-  background: url(../images/fz-3-subs-bg.png) no-repeat center center;
+  background: url(../images/entranceDoors/banner.jpg) no-repeat center center;
   background-size: cover;
   padding: 100px 0;
   color: #ffffff;
@@ -8381,6 +8381,7 @@ input[type=number].cart-product-quantity-input {
   display: flex;
   gap: 60px;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 @media screen and (max-width: 1399px) {
   .fz-inner-contact-details {
@@ -8394,7 +8395,6 @@ input[type=number].cart-product-quantity-input {
 }
 @media screen and (max-width: 991px) {
   .fz-inner-contact-details {
-    flex-direction: column;
     align-items: center;
   }
 }
@@ -8437,9 +8437,7 @@ input[type=number].cart-product-quantity-input {
   border-radius: 5px;
 }
 .fz-inner-contact-details__info-card {
-  width: 30%;
-  padding: 30px;
-  background-color: #f8f8f8;
+  flex: 1 1 230px;
 }
 @media screen and (max-width: 1199px) {
   .fz-inner-contact-details__info-card {
@@ -8462,51 +8460,56 @@ input[type=number].cart-product-quantity-input {
     padding: 20px;
   }
 }
-.fz-inner-contact-details__info-card ul li {
+.fz-inner-contact-details__info-card-text {
+  background-color: #f8f8f8;
+  padding: 30px;
+  margin-bottom: 15px;
+}
+.fz-inner-contact-details__info-card-text ul li {
   display: flex;
   gap: 20px;
   margin-bottom: 25px;
 }
-.fz-inner-contact-details__info-card ul li .contact-numbers {
+.fz-inner-contact-details__info-card-text ul li .contact-numbers {
   display: flex;
   flex-direction: column;
 }
-.fz-inner-contact-details__info-card ul li .contact-numbers a:hover {
+.fz-inner-contact-details__info-card-text ul li .contact-numbers a:hover {
   color: #B8860B;
 }
-.fz-inner-contact-details__info-card .fz-single-contact-info {
+.fz-inner-contact-details__info-card-text .fz-single-contact-info {
   font-size: 17px;
   color: #777;
 }
 @media screen and (max-width: 767px) {
-  .fz-inner-contact-details__info-card .fz-single-contact-info {
+  .fz-inner-contact-details__info-card-text .fz-single-contact-info {
     font-size: 15px;
   }
 }
-.fz-inner-contact-details__info-card .fz-single-contact-info i {
+.fz-inner-contact-details__info-card-text .fz-single-contact-info i {
   font-size: 22px;
   color: #222222;
   padding-top: 4px;
 }
-.fz-inner-contact-details__info-card .contact-socials {
+.fz-inner-contact-details__info-card-text .contact-socials {
   margin-bottom: 0;
   margin-top: 30px;
 }
-.fz-inner-contact-details__info-card .contact-socials__title {
+.fz-inner-contact-details__info-card-text .contact-socials__title {
   font-size: 18px;
   font-family: "Poppins", sans-serif;
 }
-.fz-inner-contact-details__info-card .contact-socials ul {
+.fz-inner-contact-details__info-card-text .contact-socials ul {
   display: flex;
   gap: 15px;
 }
-.fz-inner-contact-details__info-card .contact-socials ul li {
+.fz-inner-contact-details__info-card-text .contact-socials ul li {
   margin-bottom: 0;
 }
-.fz-inner-contact-details__info-card .contact-socials ul li a {
+.fz-inner-contact-details__info-card-text .contact-socials ul li a {
   color: #777;
 }
-.fz-inner-contact-details__info-card .contact-socials ul li a:hover {
+.fz-inner-contact-details__info-card-text .contact-socials ul li a:hover {
   color: #B8860B;
 }
 
