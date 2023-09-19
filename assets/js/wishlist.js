@@ -8,63 +8,8 @@ window.addEventListener("load", () => {
 });
 // PRELOADER END
 
-function getQueryParamValue(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
-
 /////////////////////////////////////////////////////
 // Button Hover Animation
-
-const getSingleProduct = async () => {
-  const productId = getQueryParamValue('productId')
-  const res = await fetch("../../products/products.json")
-  const data = await res.json()
-  const { products, categories } = data
-
-  const itemMatch = products.find(item => item.id === productId)
-  if (!itemMatch) {
-    alert("Məhsul tapılmadı")
-    return
-  }
-  const { title, price, images, categoryId } = itemMatch;
-
-  const productImagesContainer = document.querySelector(".fz-product-details__img")
-  const productImagesContainerNav = document.querySelector(".fz-product-details__img-nav")
-  const productTitleEl = document.querySelector(".fz-product-details__title");
-  const productPriceEl = document.querySelector(".price");
-  const productCategoryEl = document.querySelector("#product-category");
-
-  productTitleEl.textContent = title;
-  productPriceEl.textContent = `${price} AZN`
-  productCategoryEl.textContent = categories.find(item => item.id === categoryId)?.title;
-  productImagesContainer.innerHTML = ""
-  productImagesContainerNav.innerHTML = ""
-
-  images.forEach(url => {
-    const imgEl = document.createElement("img")
-    imgEl.src = `assets/images/${categoryId === "1" ? "roomDoors" :"entranceDoors"}/${url}`
-    imgEl.alt = "Door Product Image"
-    const imgClone = imgEl.cloneNode(true)
-    productImagesContainer.append(imgEl)
-    productImagesContainerNav.append(imgClone)
-  })
-  $('#fz-product-details__img-slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-});
-
-$('.fz-product-details__img-nav').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    asNavFor: '.fz-product-details__img',
-    dots: false,
-    focusOnSelect: true,
-});
-}
-getSingleProduct()
 
 $('.fz-def-btn').on('mouseout', function (e) {
     var x = e.pageX - $(this).offset().left;
@@ -182,35 +127,6 @@ quantityOpts.forEach(quantityOpt => {
 const wishlistBtn = document.querySelector(".fz-header-wishlist-btn");
 const wishlistModal = document.querySelector(".fz-wishlist-modal");
 
-if (wishlistBtn) {
-    wishlistBtn.onclick = () => {
-        wishlistModal.classList.add("open");
-        overlay.classList.add("open");
-        body.style.overflow = "hidden";
-    }
-}
-
-
-// CART & WISHLIST MODAL CLOSE
-const closeBtns = document.querySelectorAll(".cart-area-modal-close-btn");
-closeBtns.forEach(closeBtn => {
-    closeBtn.onclick = () => {
-        closeModal();
-    }
-})
-overlay.addEventListener("click", () => {
-    closeModal();
-})
-
-const closeModal = () => {
-    cartModal.classList.remove("open");
-    wishlistModal.classList.remove("open")
-    overlay.classList.remove("open");
-    body.style.overflow = "visible";
-}
-
-
-
 // FIXED HEADER =====
 window.addEventListener("scroll", () => {
     const toFixHeaders = document.querySelectorAll(".to-be-fixed");
@@ -226,26 +142,73 @@ window.addEventListener("scroll", () => {
 });
 //===== FIXED HEADER
 
-// QUICK VIEW MODAL JS =====
-const quickviewBtns = document.querySelectorAll(".fz-3-quick-view");
-const quickviewModal = document.querySelector(".fz-quick-view-modal");
 
-quickviewBtns.forEach(quickviewBtn => {
-    quickviewBtn.onclick = () => {
-        quickviewModal.classList.add("open");
-        overlay.classList.add("open");
-        body.style.overflow = "hidden";
-    }
-
-    document.onclick = (e) => {
-        if (!e.target.classList.contains("fz-3-quick-view") && !quickviewModal.contains(e.target)) {
-            quickviewModal.classList.remove("open");
-        }
-    }
-})
 
 
 //----------------- PRODCUT DETAILS IMAGES SLIDER JS START ---------------------------------
 
 //----------------- PRODCUT DETAILS IMAGES SLIDER JS END ---------------------------------
 
+// load wishlist from local storage
+
+const singleFavoriteProductTemplate = (item) => `
+<div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+<div class="fz-1-single-product">
+    <div class="fz-single-product__img">
+        <img src="assets/images/${item.categoryId === "1" ? "roomDoors" : "entranceDoors"}/${item.images[0]}" alt="Product Image">
+        <div class="fz-single-product__actions">
+            <button class="fz-add-to-wishlist-btn">
+                <span class="btn-txt">add To wishlist</span>
+                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="fz-single-product__txt">
+        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+        <a href="shop-details.html" class="fz-single-product__title">${item.title}</a>
+        <div class="fz-single-product__price-rating">
+            <p class="fz-single-product__price">
+                <span class="current-price">${item.price} AZN</span>
+            </p>
+
+            <div class="rating list-view-text">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-light fa-star"></i>
+            </div>
+        </div>
+
+        <p class="fz-single-product__desc list-view-text">
+            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+        </p>
+
+        <div class="fz-single-product__actions list-view-text">
+            <button class="fz-add-to-wishlist-btn">
+                <span class="btn-txt">add To wishlist</span>
+                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+`
+
+const wishlistProductsContainer = document.querySelector(".fz-inner-products-container .row")
+
+const loadWishlistProducts = () => {
+    const products = JSON.parse(localStorage.getItem("wishlist")) || []
+    wishlistProductsContainer.innerHTML = ""
+    products.forEach(door => {
+        const singleProduct = singleFavoriteProductTemplate(door).trim()
+        const tempElement = document.createElement("div")
+        tempElement.innerHTML = singleProduct
+        wishlistProductsContainer.appendChild(tempElement.firstChild)
+    })
+}
+
+console.log("wishlist load")
+loadWishlistProducts()

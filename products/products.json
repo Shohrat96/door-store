@@ -202,25 +202,32 @@
       "images": ["strelesvengegullu-85.jpeg"]
     },
     {
-      "id": "25",
+      "id": "28",
       "title": "Str-siciliya-14",
       "price": 160,
       "categoryId": "2",
       "images": ["str-siciliya-14.jpeg"]
     },
     {
-      "id": "26",
+      "id": "29",
       "title": "Strelesgullu-85",
       "price": 160,
       "categoryId": "2",
       "images": ["strelesgullu-85.jpeg"]
     },
     {
-      "id": "27",
+      "id": "30",
       "title": "Strelesvengegullu-85",
       "price": 160,
       "categoryId": "2",
       "images": ["strelesvengegullu-85.jpeg"]
+    },
+    {
+      "id": "31",
+      "title": "Qoşa qapı",
+      "price": 250,
+      "categoryId": "2",
+      "images": ["IMG_20190902_213602_265.jpeg"]
     }
   ]
 }

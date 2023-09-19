@@ -277,7 +277,7 @@
                 &:hover {
                     gap: 10px;
 
-                    @include xl {
+                    @include sm {
                         background-color: $black;
                         color: $white;
                     }

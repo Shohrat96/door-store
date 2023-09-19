@@ -94,16 +94,16 @@
 }
 
 .fz-1-latest-products-slider-nav {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: max-content;
+    // position: absolute;
+    // right: 0;
+    // top: 0;
+    // width: max-content;
     display: flex;
     gap: 5px;
 
-    @include md {
-        display: none;
-    }
+    // @include md {
+    //     display: none;
+    // }
 
     button {
         background-color: #f8f8f8;

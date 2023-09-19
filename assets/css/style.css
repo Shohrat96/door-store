@@ -407,6 +407,9 @@ img {
     font-size: 25px;
   }
 }
+.fz-1-section-heading a {
+  margin-top: 12px;
+}
 
 @media screen and (max-width: 575px) {
   .col-xs-12 {
@@ -1081,7 +1084,7 @@ img {
 .fz-1-single-product .fz-single-product__actions button:hover {
   gap: 10px;
 }
-@media screen and (max-width: 1399px) {
+@media screen and (max-width: 767px) {
   .fz-1-single-product .fz-single-product__actions button:hover {
     background-color: #222222;
     color: #ffffff;
@@ -3980,7 +3983,7 @@ a.fz-hamburger {
 }
 
 .fz-1-modern-door-section {
-  padding: 120px 0;
+  padding-top: 120px;
 }
 @media screen and (max-width: 991px) {
   .fz-1-modern-door-section {
@@ -4605,17 +4608,8 @@ a.fz-hamburger {
 }
 
 .fz-1-latest-products-slider-nav {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: max-content;
   display: flex;
   gap: 5px;
-}
-@media screen and (max-width: 991px) {
-  .fz-1-latest-products-slider-nav {
-    display: none;
-  }
 }
 .fz-1-latest-products-slider-nav button {
   background-color: #f8f8f8;
@@ -5759,11 +5753,6 @@ a.fz-hamburger {
 .fz-gallery-section .fz-single-gallery-item button.fz-ig-btn i {
   margin-top: 25px;
   transition: margin 0.6s ease;
-}
-
-.fz-1-gallery-section {
-  background-color: #f8f8f8;
-  padding-top: 60px;
 }
 
 .fz-1-features-section {
