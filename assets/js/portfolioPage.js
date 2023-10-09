@@ -127,13 +127,13 @@ quantityOpts.forEach(quantityOpt => {
 const wishlistBtn = document.querySelector(".fz-header-wishlist-btn");
 const wishlistModal = document.querySelector(".fz-wishlist-modal");
 
-if (wishlistBtn) {
-    wishlistBtn.onclick = () => {
-        wishlistModal.classList.add("open");
-        overlay.classList.add("open");
-        body.style.overflow = "hidden";
-    }
-}
+// if (wishlistBtn) {
+//     wishlistBtn.onclick = () => {
+//         wishlistModal.classList.add("open");
+//         overlay.classList.add("open");
+//         body.style.overflow = "hidden";
+//     }
+// }
 
 
 // CART & WISHLIST MODAL CLOSE
@@ -173,8 +173,70 @@ window.addEventListener("scroll", () => {
 
 
 
+// set portfolio products
+const singlePortfolioTemplate = (item) => `
+<div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+<div class="fz-1-single-product">
+    <div class="fz-single-product__img">
+        <img src="assets/images/portfolio/${item.images[0]}" alt="Product Image">
+        <div class="fz-single-product__actions">
+            <button class="fz-add-to-wishlist-btn">
+                <span class="btn-txt">add To wishlist</span>
+                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+            </button>
+        </div>
+    </div>
 
-//----------------- PRODCUT DETAILS IMAGES SLIDER JS START ---------------------------------
+    <div class="fz-single-product__txt">
+        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+        <a href="shop-details.html" class="fz-single-product__title">${item.title}</a>
+        <div class="fz-single-product__price-rating">
+            <p class="fz-single-product__price">
+                <span class="current-price">${item.price} AZN</span>
+            </p>
 
-//----------------- PRODCUT DETAILS IMAGES SLIDER JS END ---------------------------------
+            <div class="rating list-view-text">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-light fa-star"></i>
+            </div>
+        </div>
 
+        <p class="fz-single-product__desc list-view-text">
+            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+        </p>
+
+        <div class="fz-single-product__actions list-view-text">
+            <button class="fz-add-to-wishlist-btn">
+                <span class="btn-txt">add To wishlist</span>
+                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+`
+
+const portfolioProductsContainer = document.querySelector(".fz-inner-products-container .row")
+
+
+const setPortfolioProducts = async () => {
+    const res = await fetch("../products/products.json")
+    const data = await res.json()
+    if (data.portfolio.length > 0) {
+      portfolioProductsContainer.innerHTML = ''
+  
+      data.portfolio.forEach(element => {
+        const singleLatestEl = singlePortfolioTemplate(element).trim()
+        const tempWrapperElement = document.createElement('div')
+        tempWrapperElement.innerHTML = singleLatestEl
+        portfolioProductsContainer.append(tempWrapperElement.firstChild)
+      });
+  
+    }
+  }
+  
+  setPortfolioProducts()

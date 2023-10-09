@@ -10,47 +10,47 @@ window.addEventListener("load", () => {
 const newProductsSection = document.querySelector(".fz-1-products-container");
 
 
-const singleLatestProduct = (image, price, title, id) => (`
-
-
-<div class="fz-1-single-product">
-  <div class="fz-single-product__img">
-    <a href="shop-details.html?productId=${id}">
-    <img
-      src=assets/images/roomDoors/${image}
-      alt="Product Image"
-    />
-    </a>
-    <div class="fz-single-product__actions">
-      <button class="fz-add-to-wishlist-btn">
-        <span class="btn-txt">Bəyəndiklərimə əlavə et</span>
-        <span class="btn-icon"
-          ><i class="fa-light fa-heart"></i
-        ></span>
-      </button>
+const singleProduct = (product, baseImageUrl="assets/images/roomDoors/") => {
+  const {images, price, title, id} = product
+  const mainUrl = images[0]
+  return (`
+  <div class="fz-1-single-product">
+    <div class="fz-single-product__img">
+      <a style="width: 100%;" href="shop-details.html?productId=${id}">
+      <img
+        src=${baseImageUrl}${mainUrl}
+        alt="Product Image"
+      />
+      </a>
+      <div class="fz-single-product__actions">
+        <button class="fz-add-to-wishlist-btn">
+          <span class="btn-txt">Bəyəndiklərimə əlavə et</span>
+          <span class="btn-icon"
+            ><i class="fa-light fa-heart"></i
+          ></span>
+        </button>
+      </div>
+    </div>
+    <div class="fz-single-product__txt">
+      <a href="shop-details.html?productId=${id}" class="fz-single-product__title"
+        >${title}</a
+      >
+      <p class="fz-single-product__price">
+        <span class="current-price">${price} AZN</span>
+      </p>
     </div>
   </div>
-  <div class="fz-single-product__txt">
-    <a href="shop-details.html?productId=${id}" class="fz-single-product__title"
-      >${title}</a
-    >
-    <p class="fz-single-product__price">
-      <span class="current-price">${price} AZN</span>
-    </p>
-  </div>
-</div>
-`)
+  `)
+}
 
 const setLatestProducts = async () => {
   const res = await fetch("../products/products.json")
   const data = await res.json()
-  console.log('data in setLatestProducts: ', data)
   if (data.products.length > 0) {
     newProductsSection.innerHTML = ''
 
     data.products.slice(0, 15).forEach(element => {
-      const { images, price, title, id } = element
-      const singleLatestEl = singleLatestProduct(images[0], price, title, id).trim()
+      const singleLatestEl = singleProduct(element).trim()
       const tempWrapperElement = document.createElement('div')
       tempWrapperElement.innerHTML = singleLatestEl
       newProductsSection.append(tempWrapperElement.firstChild)
@@ -112,3 +112,65 @@ const setLatestProducts = async () => {
   }
 }
 setLatestProducts()
+
+
+// set portfolio products
+
+const portfolioProductsContainer = document.querySelector(".fz-1-modern-door-slider");
+
+const setPortfolioProducts = async () => {
+  const res = await fetch("../products/products.json")
+  const data = await res.json()
+  if (data.portfolio.length > 0) {
+    portfolioProductsContainer.innerHTML = ''
+
+    data.portfolio.forEach(element => {
+      const singleLatestEl = singleProduct(element, "assets/images/portfolio/").trim()
+      const tempWrapperElement = document.createElement('div')
+      tempWrapperElement.innerHTML = singleLatestEl
+      portfolioProductsContainer.append(tempWrapperElement.firstChild)
+    });
+    $(".fz-1-modern-door-slider").owlCarousel({
+      items: 4,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 1500,
+      nav: true,
+      navText: [
+        '<i class="fa-solid fa-angle-left"></i>',
+        '<i class="fa-solid fa-angle-right"></i>',
+      ],
+      navContainer: ".fz-1-modern-door-slider-nav",
+      margin: 15,
+      responsiveBaseElement: body,
+      responsive: {
+        0: {
+          items: 1,
+        },
+    
+        480: {
+          items: 2,
+        },
+    
+        576: {
+          items: 2,
+        },
+    
+        768: {
+          items: 3,
+        },
+    
+        992: {
+          items: 4,
+        },
+    
+        1200: {
+          items: 4,
+        },
+      },
+    });
+
+  }
+}
+
+setPortfolioProducts()

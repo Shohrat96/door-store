@@ -229,5 +229,77 @@
       "categoryId": "2",
       "images": ["IMG_20190902_213602_265.jpeg"]
     }
+  ],
+  "portfolio": [
+    {
+      "id": "33",
+      "title": "Nümunə 1",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["0005.jpeg"]
+    },
+    {
+      "id": "34",
+      "title": "Nümunə 2",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["0006.jpeg"]
+    },
+    {
+      "id": "35",
+      "title": "Nümunə 3",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["0007.jpeg"]
+    },
+    {
+      "id": "36",
+      "title": "Nümunə 4",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["0008.jpeg"]
+    },
+    {
+      "id": "37",
+      "title": "Nümunə 5",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["0009.jpeg"]
+    },
+    {
+      "id": "38",
+      "title": "Nümunə 6",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["0010.jpeg"]
+    },
+    {
+      "id": "39",
+      "title": "Nümunə 7",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["IMG-20230618-WA0065.jpeg"]
+    },
+    {
+      "id": "40",
+      "title": "Nümunə 8",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["IMG-20230618-WA0066.jpeg"]
+    },
+    {
+      "id": "41",
+      "title": "Nümunə 9",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["IMG-20230618-WA0067.jpeg"]
+    },
+    {
+      "id": "42",
+      "title": "Nümunə 10",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["PSX_20190808_123824.jpeg"]
+    }
   ]
 }

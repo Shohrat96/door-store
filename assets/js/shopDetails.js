@@ -182,13 +182,13 @@ quantityOpts.forEach(quantityOpt => {
 const wishlistBtn = document.querySelector(".fz-header-wishlist-btn");
 const wishlistModal = document.querySelector(".fz-wishlist-modal");
 
-if (wishlistBtn) {
-    wishlistBtn.onclick = () => {
-        wishlistModal.classList.add("open");
-        overlay.classList.add("open");
-        body.style.overflow = "hidden";
-    }
-}
+// if (wishlistBtn) {
+//     wishlistBtn.onclick = () => {
+//         wishlistModal.classList.add("open");
+//         overlay.classList.add("open");
+//         body.style.overflow = "hidden";
+//     }
+// }
 
 
 // CART & WISHLIST MODAL CLOSE

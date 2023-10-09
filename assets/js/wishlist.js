@@ -157,10 +157,7 @@ const singleFavoriteProductTemplate = (item) => `
     <div class="fz-single-product__img">
         <img src="assets/images/${item.categoryId === "1" ? "roomDoors" : "entranceDoors"}/${item.images[0]}" alt="Product Image">
         <div class="fz-single-product__actions">
-            <button class="fz-add-to-wishlist-btn">
-                <span class="btn-txt">add To wishlist</span>
-                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
-            </button>
+
         </div>
     </div>
 
@@ -199,16 +196,60 @@ const singleFavoriteProductTemplate = (item) => `
 
 const wishlistProductsContainer = document.querySelector(".fz-inner-products-container .row")
 
+
+const addToFavorite = (item) => {
+    // const {id, title, price, imageUrl, categoryId} = item
+    let wishList = JSON.parse(localStorage.getItem('wishlist')) || []
+
+        wishList = wishList.filter(el => el.id !== item.id)
+        Toastify({
+          text: "Bəyəndiklərimdən silindi",
+          duration: 3000,
+          destination: "/wishlist.html",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #fdf11d, #fcb045)",
+          },
+          // Use template to customize content
+          template: '<div class="toastify-content"><span class="toastify-text">Bəyəndiklərimdən silindi</span><span class="toastify-secondary-text">Secondary Text Goes Here</span></div>',
+          onClick: function() {} // Callback after click
+        }).showToast();
+        
+    localStorage.setItem("wishlist", JSON.stringify(wishList))
+    loadWishlistProducts()
+}
+
 const loadWishlistProducts = () => {
     const products = JSON.parse(localStorage.getItem("wishlist")) || []
+
     wishlistProductsContainer.innerHTML = ""
-    products.forEach(door => {
+    products.forEach((door, idx) => {
         const singleProduct = singleFavoriteProductTemplate(door).trim()
         const tempElement = document.createElement("div")
         tempElement.innerHTML = singleProduct
         wishlistProductsContainer.appendChild(tempElement.firstChild)
+
+        const addToWishlistBtn = document.createElement("button")
+        addToWishlistBtn.innerHTML = `
+        <span class="btn-icon btn-icon--active"><i class="fa-light fa-heart"></i></span>
+    `
+        addToWishlistBtn.classList.add("fz-add-to-wishlist-btn")
+        const wishlistBtnWrapper = document.querySelectorAll(".fz-single-product__actions:not([class*=' '])")[idx]
+        const wishlistBtnWrapperListView = document.querySelectorAll(".fz-single-product__actions.list-view-text")[idx]    
+        const addToWishInListView = addToWishlistBtn.cloneNode(true);
+        addToWishlistBtn.addEventListener("click", () => {
+            addToFavorite(door)
+        })
+        addToWishInListView.addEventListener("click", () => {
+            addToFavorite(door)
+        })
+        wishlistBtnWrapperListView.appendChild(addToWishInListView)
+        wishlistBtnWrapper.appendChild(addToWishlistBtn)
     })
 }
 
-console.log("wishlist load")
 loadWishlistProducts()

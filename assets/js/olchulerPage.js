@@ -98,42 +98,17 @@ if (cartBtn) {
 
 const quantityOpts = document.querySelectorAll(".cart-product__quantity");
 
-quantityOpts.forEach(quantityOpt => {
-    const minusBtn = quantityOpt.querySelector(".cart-product__minus");
-    const plusBtn = quantityOpt.querySelector(".cart-product__plus");
-
-    const increasingQtyValue = () => {
-        const productQuantityInput = quantityOpt.querySelector(".cart-product-quantity-input");
-        productQuantityInput.value++;
-    }
-
-    const decreasingQtyValue = () => {
-        const productQuantityInput = quantityOpt.querySelector(".cart-product-quantity-input");
-        if (productQuantityInput.value > 1) {
-            productQuantityInput.value--;
-        }
-    }
-
-    plusBtn.onclick = () => {
-        increasingQtyValue();
-    }
-
-    minusBtn.onclick = () => {
-        decreasingQtyValue();
-    }
-});
-
 // WISHLIST MODAL JS
 const wishlistBtn = document.querySelector(".fz-header-wishlist-btn");
 const wishlistModal = document.querySelector(".fz-wishlist-modal");
 
-if (wishlistBtn) {
-    wishlistBtn.onclick = () => {
-        wishlistModal.classList.add("open");
-        overlay.classList.add("open");
-        body.style.overflow = "hidden";
-    }
-}
+// if (wishlistBtn) {
+//     wishlistBtn.onclick = () => {
+//         wishlistModal.classList.add("open");
+//         overlay.classList.add("open");
+//         body.style.overflow = "hidden";
+//     }
+// }
 
 
 // CART & WISHLIST MODAL CLOSE

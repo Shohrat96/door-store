@@ -1,9 +1,22 @@
 // PRELOADER START
-document.body.style.position = "fixed";
-window.addEventListener("load", () => {
+const loaderStart = () => {
+  // document.body.style.position = "fixed";
+  document.querySelector("#pre-loader").style.opacity = 1;
+  document.querySelector("#pre-loader").style.visibility = "visible";
+  document.querySelector("#pre-loader").style.display = "block";
+};
+
+// loaderStart()
+
+const loaderEnd = () => {
   document.body.style.position = "";
   document.querySelector("#pre-loader").style.opacity = 0;
   document.querySelector("#pre-loader").style.visibility = "hidden";
+  document.querySelector("#pre-loader").style.display = "none";
+}
+window.addEventListener("load", () => {
+  // loaderEnd();
+  loaderEnd()
 });
 // PRELOADER END
 
@@ -372,13 +385,13 @@ quantityOpts.forEach((quantityOpt) => {
 const wishlistBtn = document.querySelector(".fz-header-wishlist-btn");
 const wishlistModal = document.querySelector(".fz-wishlist-modal");
 
-if (wishlistBtn) {
-  wishlistBtn.onclick = () => {
-    wishlistModal.classList.add("open");
-    overlay.classList.add("open");
-    body.style.overflow = "hidden";
-  };
-}
+// if (wishlistBtn) {
+//   wishlistBtn.onclick = () => {
+//     wishlistModal.classList.add("open");
+//     overlay.classList.add("open");
+//     body.style.overflow = "hidden";
+//   };
+// }
 
 // CART & WISHLIST MODAL CLOSE
 const closeBtns = document.querySelectorAll(".cart-area-modal-close-btn");
@@ -490,45 +503,45 @@ $(".filter-navs button").on("click", function () {
   }
 });
 
-$(".fz-1-modern-door-slider").owlCarousel({
-  items: 4,
-  loop: true,
-  autoplay: true,
-  autoplayTimeout: 1500,
-  nav: true,
-  navText: [
-    '<i class="fa-solid fa-angle-left"></i>',
-    '<i class="fa-solid fa-angle-right"></i>',
-  ],
-  navContainer: ".fz-1-modern-door-slider-nav",
-  margin: 15,
-  responsiveBaseElement: body,
-  responsive: {
-    0: {
-      items: 1,
-    },
+// $(".fz-1-modern-door-slider").owlCarousel({
+//   items: 4,
+//   loop: true,
+//   autoplay: true,
+//   autoplayTimeout: 1500,
+//   nav: true,
+//   navText: [
+//     '<i class="fa-solid fa-angle-left"></i>',
+//     '<i class="fa-solid fa-angle-right"></i>',
+//   ],
+//   navContainer: ".fz-1-modern-door-slider-nav",
+//   margin: 15,
+//   responsiveBaseElement: body,
+//   responsive: {
+//     0: {
+//       items: 1,
+//     },
 
-    480: {
-      items: 2,
-    },
+//     480: {
+//       items: 2,
+//     },
 
-    576: {
-      items: 2,
-    },
+//     576: {
+//       items: 2,
+//     },
 
-    768: {
-      items: 3,
-    },
+//     768: {
+//       items: 3,
+//     },
 
-    992: {
-      items: 4,
-    },
+//     992: {
+//       items: 4,
+//     },
 
-    1200: {
-      items: 4,
-    },
-  },
-});
+//     1200: {
+//       items: 4,
+//     },
+//   },
+// });
 
 $(".fz-1-brands").owlCarousel({
   items: 5,
@@ -571,14 +584,48 @@ const productsContainerRow = document.querySelector(
 const addToFavorite = (item) => {
     // const {id, title, price, imageUrl, categoryId} = item
     let wishList = JSON.parse(localStorage.getItem('wishlist')) || []
-    console.log("wishList in addToFavorite: ", wishList)
 
     if (wishList.some(door => door.id === item.id)) {
         wishList = wishList.filter(el => el.id !== item.id)
+        Toastify({
+          text: "Bəyəndiklərimdən silindi",
+          duration: 3000,
+          destination: "/wishlist.html",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #fdf11d, #fcb045)",
+          },
+          // Use template to customize content
+          template: '<div class="toastify-content"><span class="toastify-text">Bəyəndiklərimdən silindi</span><span class="toastify-secondary-text">Secondary Text Goes Here</span></div>',
+          onClick: function() {} // Callback after click
+        }).showToast();
+        
     } else {
         wishList.push(item)
+        Toastify({
+          text: "Bəyəndiklərimə əlavə edildi",
+          duration: 3000,
+          destination: "/wishlist.html",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+          // Use template to customize content
+          template: '<div class="toastify-content"><span class="toastify-text">Bəyəndiklərimdən silindi</span><span class="toastify-secondary-text">Secondary Text Goes Here</span></div>',
+          onClick: function() {} // Callback after click
+        }).showToast();
+        
     }
     localStorage.setItem("wishlist", JSON.stringify(wishList))
+    getProducts()
 }
 const singleProductTemplate = (imageUrl, title, price, id, categoryId) => {
 
@@ -586,7 +633,7 @@ const singleProductTemplate = (imageUrl, title, price, id, categoryId) => {
     <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
     <div class="fz-1-single-product">
     <div class="fz-single-product__img">
-        <a href="shop-details.html?productId=${id}">
+        <a style="width: 100%;" href="shop-details.html?productId=${id}">
             <img src="assets/images/${categoryId === "1" ? "roomDoors" : "entranceDoors"}/${imageUrl}" alt="Product Image">
         </a>
         <div class="fz-single-product__actions">
@@ -638,7 +685,6 @@ const sortProducts = (sortOption, products) => {
 
 const getBetweenPrice = (products, priceRange) => {
   const filteredProducts = products.filter((item) => {
-    console.log("item in filteR: ", item);
     if (
       parseInt(item.price) >= priceRange[0] &&
       parseInt(item.price) <= priceRange[1]
@@ -656,11 +702,14 @@ let sortOption = null;
 let priceRange = null;
 
 const getProducts = async () => {
+  loaderStart()
   productsContainerRow.innerHTML = "";
   const categoryQueryParam = getQueryParamValue("category");
 
   const res = await fetch("../../products/products.json");
   const data = await res.json();
+  loaderEnd()
+
   let { products } = data;
   if (categoryQueryParam === "otaq-qapilari") {
     products = products.filter((item) => item.categoryId === "1");
@@ -675,16 +724,19 @@ const getProducts = async () => {
     products = sortProducts(sortOption, products);
   }
 
+  const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || []
+
   products.forEach((item, idx) => {
+    const itemIsInWishlist = wishlistItems.some(product => product.id === item.id)
+
     const addToWishlistBtn = document.createElement("button")
     addToWishlistBtn.classList.add("fz-add-to-wishlist-btn")
     addToWishlistBtn.addEventListener("click", (e) => {
         addToFavorite(item)
-        // console.log("item to add : ", item)
     })
     addToWishlistBtn.innerHTML = `
-        <span class="btn-txt">Bəyəndiklərimə əlavə et</span>
-        <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+        <span class="btn-txt">${itemIsInWishlist ? 'Bəyəndiklərimdən sil' : 'Bəyəndiklərimə əlavə et'}</span>
+        <span class="btn-icon ${itemIsInWishlist ? 'btn-icon--active' : ''}"><i class="fa-light fa-heart"></i></span>
     `
 
     const newEl = document.createElement("div");
@@ -948,7 +1000,6 @@ filterBtn.addEventListener("click", () => {
   const maxPrice = parseInt(document.querySelector("#maxInput").value);
   priceRange = [minimumPrice, maxPrice];
   getProducts();
-  console.log("range: ", minimumPrice, maxPrice);
 });
 // -------------------------------- PRDUCTS FILTERING BY PRICE END -----------------------------------------
 
@@ -970,12 +1021,9 @@ $(".fz-product-details__img-nav").slick({
 //----------------- PRODCUT DETAILS IMAGES SLIDER JS END ---------------------------------
 
 const sortOptions = document.querySelectorAll(".nice-select .list li");
-console.log("element: ", sortOptions);
 sortOptions.forEach((item) => {
   item.addEventListener("click", (e) => {
     const sortOptionValue = e.target.dataset.value;
-    // if ()
-    console.log("element: ", sortOption); // price-asc | price-desc
     sortOption = sortOptionValue;
     getProducts();
   });
