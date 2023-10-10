@@ -155,7 +155,9 @@ const singleFavoriteProductTemplate = (item) => `
 <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
 <div class="fz-1-single-product">
     <div class="fz-single-product__img">
-        <img src="assets/images/${item.categoryId === "1" ? "roomDoors" : "entranceDoors"}/${item.images[0]}" alt="Product Image">
+        <a style="width: 100%; height: 100%;" href="shop-details.html?productId=${item.id}">
+            <img src="assets/images/${item.categoryId === "1" ? "roomDoors" : "entranceDoors"}/${item.images[0]}" alt="Product Image">
+        </a>
         <div class="fz-single-product__actions">
 
         </div>
@@ -163,7 +165,7 @@ const singleFavoriteProductTemplate = (item) => `
 
     <div class="fz-single-product__txt">
         <span class="fz-single-product__category list-view-text">Wooden Door</span>
-        <a href="shop-details.html" class="fz-single-product__title">${item.title}</a>
+        <a href="shop-details.html?productId=${item.id}" class="fz-single-product__title">${item.title}</a>
         <div class="fz-single-product__price-rating">
             <p class="fz-single-product__price">
                 <span class="current-price">${item.price} AZN</span>

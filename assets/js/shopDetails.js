@@ -12,12 +12,13 @@ function getQueryParamValue(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
-
+const productId = getQueryParamValue('productId')
+let productMatch = {}
 /////////////////////////////////////////////////////
 // Button Hover Animation
 
 const getSingleProduct = async () => {
-  const productId = getQueryParamValue('productId')
+
   const res = await fetch("../../products/products.json")
   const data = await res.json()
   const { products, categories } = data
@@ -27,8 +28,8 @@ const getSingleProduct = async () => {
     alert("Məhsul tapılmadı")
     return
   }
+  productMatch = JSON.parse(JSON.stringify(itemMatch))
   const { title, price, images, categoryId } = itemMatch;
-
   const productImagesContainer = document.querySelector(".fz-product-details__img")
   const productImagesContainerNav = document.querySelector(".fz-product-details__img-nav")
   const productTitleEl = document.querySelector(".fz-product-details__title");
@@ -75,8 +76,31 @@ $('.fz-def-btn').on('mouseout', function (e) {
         left: x
     });
 });
+const renderAddToWishlistBtn = () => {
+    const btnContainer = document.querySelector('.fz-product-details__actions')
+    const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || []
+    const isInWishList = wishlistItems.some(door => door.id === productId)
+    
+    const template = `
+    <button class="fz-product-details__add-to-wishlist ${isInWishList ? 'fz-product-details__add-to-wishlist-active' : ''}">
+        <i class="${isInWishList ? 'fa' : 'fa-light'} fa-heart"></i>
+        <span style="margin-left: 4px;"">${isInWishList ? 'Bəyəndiklərimdən çıxart' : 'Bəyəndiklərimə əlavə et'}</span>
+    </button>`
+    const tempElement = document.createElement('div')
+    tempElement.innerHTML = template.trim()
+    tempElement.firstChild.addEventListener('click', () => {
+        if (isInWishList) {
+            localStorage.setItem('wishlist', JSON.stringify(wishlistItems.filter(item => item.id !==productId)))
+        } else {
+            localStorage.setItem('wishlist', JSON.stringify([...wishlistItems, productMatch]))
+        }
+        renderAddToWishlistBtn()
 
-
+    })
+    btnContainer.innerHTML = ""
+    btnContainer.appendChild(tempElement.firstChild)
+}
+renderAddToWishlistBtn()
 // NICE SELECT JS START =====
 $(document).ready(function () {
     $('select').niceSelect();
@@ -243,7 +267,6 @@ quickviewBtns.forEach(quickviewBtn => {
         }
     }
 })
-
 
 //----------------- PRODCUT DETAILS IMAGES SLIDER JS START ---------------------------------
 

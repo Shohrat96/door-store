@@ -633,7 +633,7 @@ const singleProductTemplate = (imageUrl, title, price, id, categoryId) => {
     <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
     <div class="fz-1-single-product">
     <div class="fz-single-product__img">
-        <a style="width: 100%;" href="shop-details.html?productId=${id}">
+        <a style="width: 100%; height: 100%" href="shop-details.html?productId=${id}">
             <img src="assets/images/${categoryId === "1" ? "roomDoors" : "entranceDoors"}/${imageUrl}" alt="Product Image">
         </a>
         <div class="fz-single-product__actions">

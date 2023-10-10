@@ -228,6 +228,9 @@
                     color: $white;
                     border-color: $black;
                 }
+                &-active i {
+                    color: red;
+                }
             }
         }
     }

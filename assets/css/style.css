@@ -1,6 +1,4 @@
 /*============================================================
-[Master Stylesheet]
-
 =========================================================*/
 /*=======================================================
 TABLE OF CONTENTS:
@@ -7023,6 +7021,9 @@ a.fz-hamburger {
   background-color: #222222;
   color: #ffffff;
   border-color: #222222;
+}
+.fz-product-details__actions > button.fz-product-details__add-to-wishlist-active i {
+  color: red;
 }
 .fz-product-details__quantity {
   display: flex;
