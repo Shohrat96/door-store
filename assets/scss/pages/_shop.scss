@@ -185,7 +185,7 @@
     }
 
     .product-view-actions {
-        margin-bottom: 35px;
+        // margin-bottom: 35px;
     }
 
     .product-view-right-actions {
@@ -195,6 +195,7 @@
     .view-type {
         display: flex;
         gap: 10px;
+        margin-bottom: 35px;
 
         button {
             width: 40px;
@@ -228,8 +229,8 @@
 
             .list {
                 @include lg {
-                    left: auto;
-                    right: 0;
+                    // left: auto;
+                    // right: 0;
                 }
             }
         }
@@ -379,7 +380,7 @@
                 align-items: self-start;
                 padding: 25px;
                 gap: 0;
-
+                flex: 1;
                 @include xs {
                     width: 100%;
                     padding: 20px;

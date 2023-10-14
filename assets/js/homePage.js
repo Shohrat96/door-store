@@ -10,29 +10,28 @@ window.addEventListener("load", () => {
 const newProductsSection = document.querySelector(".fz-1-products-container");
 
 
-const singleProduct = (product, baseImageUrl="assets/images/roomDoors/") => {
+const singleProduct = (product, type) => {
   const {images, price, title, id} = product
+
+
+  const isPortfolioSliderImage = type === 'portfolio'
+  const linkToNavigate = isPortfolioSliderImage ? `/shop-details.html?productId=${id}&type=portfolio` :
+  `/shop-details.html?productId=${id}`
+
   const mainUrl = images[0]
   return (`
   <div class="fz-1-single-product">
     <div class="fz-single-product__img">
-      <a style="width: 100%;" href="shop-details.html?productId=${id}">
+      <a style="width: 100%;" href=${linkToNavigate}>
       <img
-        src=${baseImageUrl}${mainUrl}
+        src=${mainUrl}
         alt="Product Image"
       />
       </a>
-      <div class="fz-single-product__actions">
-        <button class="fz-add-to-wishlist-btn">
-          <span class="btn-txt">Bəyəndiklərimə əlavə et</span>
-          <span class="btn-icon"
-            ><i class="fa-light fa-heart"></i
-          ></span>
-        </button>
-      </div>
+
     </div>
     <div class="fz-single-product__txt">
-      <a href="shop-details.html?productId=${id}" class="fz-single-product__title"
+      <a href=${linkToNavigate} class="fz-single-product__title"
         >${title}</a
       >
       <p class="fz-single-product__price">
@@ -61,6 +60,7 @@ const setLatestProducts = async () => {
       autoplayTimeout: 500,
       slidesToScroll: 5,
       infinite: true,
+      pauseOnHover: false,
       adaptiveHeight: true,
       appendArrows: $(".fz-1-latest-products-slider-nav"),
       prevArrow:
@@ -125,7 +125,7 @@ const setPortfolioProducts = async () => {
     portfolioProductsContainer.innerHTML = ''
 
     data.portfolio.forEach(element => {
-      const singleLatestEl = singleProduct(element, "assets/images/portfolio/").trim()
+      const singleLatestEl = singleProduct(element, 'portfolio').trim()
       const tempWrapperElement = document.createElement('div')
       tempWrapperElement.innerHTML = singleLatestEl
       portfolioProductsContainer.append(tempWrapperElement.firstChild)
@@ -133,7 +133,7 @@ const setPortfolioProducts = async () => {
     $(".fz-1-modern-door-slider").owlCarousel({
       items: 4,
       loop: true,
-      autoplay: true,
+      autoplay: false,
       autoplayTimeout: 1500,
       nav: true,
       navText: [

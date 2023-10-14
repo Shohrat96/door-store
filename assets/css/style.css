@@ -1125,7 +1125,6 @@ img {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: 10px;
   flex-direction: column;
 }
 @media screen and (max-width: 1399px) {
@@ -3986,11 +3985,10 @@ a.fz-hamburger {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  width: calc(100% + 40px);
+  width: calc(100% + 80px);
   top: 50%;
   translate: -50% -50%;
   left: 50%;
-  z-index: 12;
 }
 @media screen and (max-width: 991px) {
   .fz-1-modern-door-section .fz-1-modern-door-slider-container .fz-1-modern-door-slider-nav {
@@ -6469,15 +6467,13 @@ a.fz-hamburger {
     padding: 50px 0;
   }
 }
-.shop-area .product-view-actions {
-  margin-bottom: 35px;
-}
 .shop-area .product-view-right-actions {
   gap: 10px;
 }
 .shop-area .view-type {
   display: flex;
   gap: 10px;
+  margin-bottom: 35px;
 }
 .shop-area .view-type button {
   width: 40px;
@@ -6505,12 +6501,6 @@ a.fz-hamburger {
     line-height: 35px;
     padding-left: 13px;
     padding-right: 25px;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .shop-area .product-sorting .nice-select .list {
-    left: auto;
-    right: 0;
   }
 }
 .shop-area .fz-inner-products-container > .row {
@@ -6646,6 +6636,7 @@ a.fz-hamburger {
   align-items: self-start;
   padding: 25px;
   gap: 0;
+  flex: 1;
 }
 @media screen and (max-width: 575px) {
   .list-view-on .fz-1-single-product .fz-single-product__txt {
@@ -6798,7 +6789,7 @@ a.fz-hamburger {
 .fz-product-details__img img {
   aspect-ratio: 1;
   width: 585px;
-  object-fit: cover;
+  object-fit: contain;
   filter: contrast(0.9);
 }
 .fz-product-details__img-nav .slick-list {
@@ -7287,6 +7278,23 @@ a.fz-hamburger {
 
 .related-product-section {
   padding-bottom: 100px;
+}
+.related-product-section-slider-nav {
+  margin-bottom: 40px;
+  display: flex;
+  gap: 5px;
+}
+.related-product-section-slider-nav button {
+  background-color: #f8f8f8;
+  width: 40px;
+  height: 40px;
+  line-height: 42px;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+}
+.related-product-section .fz-1-single-product {
+  margin: 0 15px;
 }
 @media screen and (max-width: 1199px) {
   .related-product-section {

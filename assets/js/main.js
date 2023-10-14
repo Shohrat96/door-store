@@ -590,8 +590,6 @@ const addToFavorite = (item) => {
         Toastify({
           text: "Bəyəndiklərimdən silindi",
           duration: 3000,
-          destination: "/wishlist.html",
-          newWindow: true,
           close: true,
           gravity: "top", // `top` or `bottom`
           position: "right", // `left`, `center` or `right`
@@ -609,8 +607,6 @@ const addToFavorite = (item) => {
         Toastify({
           text: "Bəyəndiklərimə əlavə edildi",
           duration: 3000,
-          destination: "/wishlist.html",
-          newWindow: true,
           close: true,
           gravity: "top", // `top` or `bottom`
           position: "right", // `left`, `center` or `right`
@@ -634,7 +630,7 @@ const singleProductTemplate = (imageUrl, title, price, id, categoryId) => {
     <div class="fz-1-single-product">
     <div class="fz-single-product__img">
         <a style="width: 100%; height: 100%" href="shop-details.html?productId=${id}">
-            <img src="assets/images/${categoryId === "1" ? "roomDoors" : "entranceDoors"}/${imageUrl}" alt="Product Image">
+            <img src=${imageUrl} alt="Product Image">
         </a>
         <div class="fz-single-product__actions">
             
@@ -642,7 +638,7 @@ const singleProductTemplate = (imageUrl, title, price, id, categoryId) => {
     </div>
     
     <div class="fz-single-product__txt">
-        <span class="fz-single-product__category list-view-text">Wooden Door</span>
+        <span class="fz-single-product__category list-view-text">${categoryId === '1' ? 'Otaq Qapısı' : 'Giriş qapısı'}</span>
         <a href="shop-details.html?productId=${id}" class="fz-single-product__title">${title}</a>
         <div class="fz-single-product__price-rating">
             <p class="fz-single-product__price">
@@ -659,8 +655,7 @@ const singleProductTemplate = (imageUrl, title, price, id, categoryId) => {
         </div>
     
         <p class="fz-single-product__desc list-view-text">
-            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
-            Led Light for Notebook Laptop/PC RGB Backlit Universal.
+
         </p>
     
         <div class="fz-single-product__actions list-view-text">

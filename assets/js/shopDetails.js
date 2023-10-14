@@ -13,6 +13,7 @@ function getQueryParamValue(param) {
   return urlParams.get(param);
 }
 const productId = getQueryParamValue('productId')
+const isPortfolioType = getQueryParamValue('type') === 'portfolio'
 let productMatch = {}
 /////////////////////////////////////////////////////
 // Button Hover Animation
@@ -21,13 +22,15 @@ const getSingleProduct = async () => {
 
   const res = await fetch("../../products/products.json")
   const data = await res.json()
-  const { products, categories } = data
+  const { products, categories, portfolio } = data
 
-  const itemMatch = products.find(item => item.id === productId)
+  const productsToSearch = isPortfolioType ? portfolio : products
+  const itemMatch = productsToSearch.find(item => item.id === productId)
   if (!itemMatch) {
     alert("Məhsul tapılmadı")
     return
   }
+  renderRelatedProductsSlider(productsToSearch) // call with category room, entrance
   productMatch = JSON.parse(JSON.stringify(itemMatch))
   const { title, price, images, categoryId } = itemMatch;
   const productImagesContainer = document.querySelector(".fz-product-details__img")
@@ -44,7 +47,7 @@ const getSingleProduct = async () => {
 
   images.forEach(url => {
     const imgEl = document.createElement("img")
-    imgEl.src = `assets/images/${categoryId === "1" ? "roomDoors" :"entranceDoors"}/${url}`
+    imgEl.src = url
     imgEl.alt = "Door Product Image"
     const imgClone = imgEl.cloneNode(true)
     productImagesContainer.append(imgEl)
@@ -66,6 +69,120 @@ $('.fz-product-details__img-nav').slick({
 });
 }
 getSingleProduct()
+
+
+const singleRelatedProductTemplate = (item, isPortfolioItem) => {
+    const typeQueryParam = isPortfolioItem ? '&type=portfolio' : ''
+    return `
+    <div class="col-lg-3 col-md-4 col-6 col-xxs-12">
+    <div class="fz-1-single-product">
+        <div class="fz-single-product__img">
+            <a style="width: 100%; height: 100%;" href="shop-details.html?productId=${item.id}${typeQueryParam}">
+                <img src=${item.images[0]} alt="Product Image">
+            </a>
+            <div class="fz-single-product__actions">
+    
+            </div>
+        </div>
+    
+        <div class="fz-single-product__txt">
+            <span class="fz-single-product__category list-view-text">Wooden Door</span>
+            <a href="shop-details.html?productId=${item.id}${typeQueryParam}" class="fz-single-product__title">${item.title}</a>
+            <div class="fz-single-product__price-rating">
+                <p class="fz-single-product__price">
+                    <span class="current-price">${item.price} AZN</span>
+                </p>
+    
+                <div class="rating list-view-text">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-light fa-star"></i>
+                </div>
+            </div>
+    
+            <p class="fz-single-product__desc list-view-text">
+
+            </p>
+    
+            <div class="fz-single-product__actions list-view-text">
+                <button class="fz-add-to-wishlist-btn">
+                    <span class="btn-txt">add To wishlist</span>
+                    <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+    `
+}
+
+const renderRelatedProductsSlider = async (productsToSearch) => {
+    const relatedProductsContainer = document.querySelector(".related-product-section .row")
+    relatedProductsContainer.innerHTML = ""
+    productsToSearch.forEach(item => {
+        const tempEl = document.createElement("div")
+        tempEl.innerHTML = singleRelatedProductTemplate(item).trim()
+        relatedProductsContainer.append(tempEl.firstChild)
+    })
+    $(".related-product-section .row").slick({
+        slidesToShow: 4,
+        autoplay: true,
+        autoplayTimeout: 100,
+        slidesToScroll: 4,
+        infinite: true,
+        adaptiveHeight: true,
+        pauseOnHover: false,
+        appendArrows: $(".related-product-section-slider-nav"),
+        prevArrow:
+          '<button type="button" class="slick-prev"><i class="fa-regular fa-angle-left"></i></button>',
+        nextArrow:
+          '<button type="button" class="slick-next"><i class="fa-regular fa-angle-right"></i></button>',
+        responsive: [
+          {
+            breakpoint: 1400,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 4,
+            },
+          },
+      
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            },
+          },
+      
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+      
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+      
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+    });
+}
+
 
 $('.fz-def-btn').on('mouseout', function (e) {
     var x = e.pageX - $(this).offset().left;

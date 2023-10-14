@@ -80,8 +80,28 @@ $(document).ready(function () {
     });
 });
 // ======= MEAN MENU OPTIONS END =======
+const productsContainer = document.querySelector(
+    ".fz-inner-products-container"
+  );
 
+const gridViewBtn = document.querySelector(".grid-view");
+const listViewBtn = document.querySelector(".list-view");
 
+if (listViewBtn) {
+    listViewBtn.onclick = () => {
+      productsContainer.classList.add("list-view-on");
+      gridViewBtn.classList.remove("active");
+      listViewBtn.classList.add("active");
+    };
+  }
+  
+  if (gridViewBtn) {
+    gridViewBtn.onclick = () => {
+      productsContainer.classList.remove("list-view-on");
+      gridViewBtn.classList.add("active");
+      listViewBtn.classList.remove("active");
+    };
+  }
 
 const body = document.body;
 const cartBtn = document.querySelector(".fz-header-cart-btn");
@@ -174,51 +194,99 @@ window.addEventListener("scroll", () => {
 
 
 // set portfolio products
-const singlePortfolioTemplate = (item) => `
-<div class="col-xl-4 col-md-4 col-6 col-xxs-12">
-<div class="fz-1-single-product">
-    <div class="fz-single-product__img">
-        <img src="assets/images/portfolio/${item.images[0]}" alt="Product Image">
-        <div class="fz-single-product__actions">
-            <button class="fz-add-to-wishlist-btn">
-                <span class="btn-txt">add To wishlist</span>
-                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
-            </button>
-        </div>
-    </div>
-
-    <div class="fz-single-product__txt">
-        <span class="fz-single-product__category list-view-text">Wooden Door</span>
-        <a href="shop-details.html" class="fz-single-product__title">${item.title}</a>
-        <div class="fz-single-product__price-rating">
-            <p class="fz-single-product__price">
-                <span class="current-price">${item.price} AZN</span>
-            </p>
-
-            <div class="rating list-view-text">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-light fa-star"></i>
+const addToFavorite = (item) => {
+    console.log('item: ', item)
+    // const {id, title, price, imageUrl, categoryId} = item
+    let wishList = JSON.parse(localStorage.getItem('wishlist')) || []
+    console.log('test')
+    if (wishList.some(door => door.id === item.id)) {
+        wishList = wishList.filter(el => el.id !== item.id)
+        Toastify({
+          text: "Bəyəndiklərimdən silindi",
+          duration: 3000,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #fdf11d, #fcb045)",
+          },
+          // Use template to customize content
+          template: '<div class="toastify-content"><span class="toastify-text">Bəyəndiklərimdən silindi</span><span class="toastify-secondary-text">Secondary Text Goes Here</span></div>',
+          onClick: function() {} // Callback after click
+        }).showToast();
+        
+    } else {
+        wishList.push(item)
+        Toastify({
+          text: "Bəyəndiklərimə əlavə edildi",
+          duration: 3000,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+          // Use template to customize content
+          template: '<div class="toastify-content"><span class="toastify-text">Bəyəndiklərimdən silindi</span><span class="toastify-secondary-text">Secondary Text Goes Here</span></div>',
+          onClick: function() {} // Callback after click
+        }).showToast();
+        
+    }
+    localStorage.setItem("wishlist", JSON.stringify(wishList))
+    setPortfolioProducts()
+}
+const singlePortfolioTemplate = (item) => {
+    const itemIsInWishlist = JSON.parse(localStorage.getItem("wishlist"))?.some(el => el.id === item.id)
+    const template = `
+    <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+    <div class="fz-1-single-product">
+        <div class="fz-single-product__img">
+            <a style="width: 100%; height: 100%;" href=shop-details.html?productId=${item.id}&type=portfolio>
+                <img src=${item.images[0]} alt="Product Image">
+            </a>
+            <div class="fz-single-product__actions">
+                <button class="fz-add-to-wishlist-btn">
+                    <span class="btn-txt">add To wishlist</span>
+                    <span style="color: ${itemIsInWishlist ? 'red' : ''}" class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                </button>
             </div>
         </div>
+    
+        <div class="fz-single-product__txt">
+            <span class="fz-single-product__category list-view-text">${item.categoryId === '1' ? 'Otaq Qapıları' : 'Giriş qapıları'}</span>
+            <a href=shop-details.html?productId=${item.id}&type=portfolio class="fz-single-product__title">${item.title}</a>
+            <div class="fz-single-product__price-rating">
+                <p class="fz-single-product__price">
+                    <span class="current-price">${item.price} AZN</span>
+                </p>
+    
+                <div class="rating list-view-text">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-light fa-star"></i>
+                </div>
+            </div>
+    
+            <p class="fz-single-product__desc list-view-text">
 
-        <p class="fz-single-product__desc list-view-text">
-            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
-            Led Light for Notebook Laptop/PC RGB Backlit Universal.
-        </p>
-
-        <div class="fz-single-product__actions list-view-text">
-            <button class="fz-add-to-wishlist-btn">
-                <span class="btn-txt">add To wishlist</span>
-                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
-            </button>
+            </p>
+    
+            <div class="fz-single-product__actions list-view-text">
+                <button class="fz-add-to-wishlist-btn">
+                    <span class="btn-txt">add To wishlist</span>
+                    <span style="color: ${itemIsInWishlist ? 'red' : ''}" class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                </button>
+            </div>
         </div>
     </div>
-</div>
-</div>
-`
+    </div>
+    `
+    return template
+}
 
 const portfolioProductsContainer = document.querySelector(".fz-inner-products-container .row")
 
@@ -229,11 +297,25 @@ const setPortfolioProducts = async () => {
     if (data.portfolio.length > 0) {
       portfolioProductsContainer.innerHTML = ''
   
-      data.portfolio.forEach(element => {
+      data.portfolio.forEach((element, idx) => {
         const singleLatestEl = singlePortfolioTemplate(element).trim()
         const tempWrapperElement = document.createElement('div')
         tempWrapperElement.innerHTML = singleLatestEl
         portfolioProductsContainer.append(tempWrapperElement.firstChild)
+        // 
+        const addToWishlistBtn = document.querySelectorAll(".fz-single-product__actions:not([class*=' '])")
+        const wishlistBtnWrapperListView = document.querySelectorAll(".fz-single-product__actions.list-view-text")[idx]
+
+        addToWishlistBtn.forEach((item, index) => {
+            if (index === idx) {
+                item.addEventListener("click", () => {
+                    addToFavorite(data.portfolio[index])
+                })
+            }
+        })
+        wishlistBtnWrapperListView.addEventListener("click", () => {
+            addToFavorite(element)
+        })
       });
   
     }

@@ -151,50 +151,52 @@ window.addEventListener("scroll", () => {
 
 // load wishlist from local storage
 
-const singleFavoriteProductTemplate = (item) => `
-<div class="col-xl-4 col-md-4 col-6 col-xxs-12">
-<div class="fz-1-single-product">
-    <div class="fz-single-product__img">
-        <a style="width: 100%; height: 100%;" href="shop-details.html?productId=${item.id}">
-            <img src="assets/images/${item.categoryId === "1" ? "roomDoors" : "entranceDoors"}/${item.images[0]}" alt="Product Image">
-        </a>
-        <div class="fz-single-product__actions">
-
-        </div>
-    </div>
-
-    <div class="fz-single-product__txt">
-        <span class="fz-single-product__category list-view-text">Wooden Door</span>
-        <a href="shop-details.html?productId=${item.id}" class="fz-single-product__title">${item.title}</a>
-        <div class="fz-single-product__price-rating">
-            <p class="fz-single-product__price">
-                <span class="current-price">${item.price} AZN</span>
-            </p>
-
-            <div class="rating list-view-text">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-light fa-star"></i>
+const singleFavoriteProductTemplate = (item, isPortfolioItem) => {
+    const typeQueryParam = isPortfolioItem ? '&type=portfolio' : ''
+    return `
+    <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
+    <div class="fz-1-single-product">
+        <div class="fz-single-product__img">
+            <a style="width: 100%; height: 100%;" href="shop-details.html?productId=${item.id}${typeQueryParam}">
+                <img src=${item.images[0]} alt="Product Image">
+            </a>
+            <div class="fz-single-product__actions">
+    
             </div>
         </div>
+    
+        <div class="fz-single-product__txt">
+            <span class="fz-single-product__category list-view-text">Wooden Door</span>
+            <a href="shop-details.html?productId=${item.id}" class="fz-single-product__title">${item.title}</a>
+            <div class="fz-single-product__price-rating">
+                <p class="fz-single-product__price">
+                    <span class="current-price">${item.price} AZN</span>
+                </p>
+    
+                <div class="rating list-view-text">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-light fa-star"></i>
+                </div>
+            </div>
+    
+            <p class="fz-single-product__desc list-view-text">
 
-        <p class="fz-single-product__desc list-view-text">
-            2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
-            Led Light for Notebook Laptop/PC RGB Backlit Universal.
-        </p>
-
-        <div class="fz-single-product__actions list-view-text">
-            <button class="fz-add-to-wishlist-btn">
-                <span class="btn-txt">add To wishlist</span>
-                <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
-            </button>
+            </p>
+    
+            <div class="fz-single-product__actions list-view-text">
+                <button class="fz-add-to-wishlist-btn">
+                    <span class="btn-txt">add To wishlist</span>
+                    <span class="btn-icon"><i class="fa-light fa-heart"></i></span>
+                </button>
+            </div>
         </div>
     </div>
-</div>
-</div>
-`
+    </div>
+    `
+}
 
 const wishlistProductsContainer = document.querySelector(".fz-inner-products-container .row")
 
@@ -207,8 +209,6 @@ const addToFavorite = (item) => {
         Toastify({
           text: "Bəyəndiklərimdən silindi",
           duration: 3000,
-          destination: "/wishlist.html",
-          newWindow: true,
           close: true,
           gravity: "top", // `top` or `bottom`
           position: "right", // `left`, `center` or `right`
@@ -230,7 +230,8 @@ const loadWishlistProducts = () => {
 
     wishlistProductsContainer.innerHTML = ""
     products.forEach((door, idx) => {
-        const singleProduct = singleFavoriteProductTemplate(door).trim()
+        const isPortfolioItem = door?.images[0].includes('portfolio')
+        const singleProduct = singleFavoriteProductTemplate(door, isPortfolioItem).trim()
         const tempElement = document.createElement("div")
         tempElement.innerHTML = singleProduct
         wishlistProductsContainer.appendChild(tempElement.firstChild)
