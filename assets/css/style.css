@@ -6441,6 +6441,10 @@ a.fz-hamburger {
   display: flex;
   gap: 2px;
 }
+.fz-sidebar .sidebar-single-area.price-filter-area .filtered-price__number input {
+  border: 1px solid #222222;
+  padding-inline: 3px;
+}
 .fz-sidebar .sidebar-single-area.product-tags-area .tags {
   display: flex;
   flex-wrap: wrap;

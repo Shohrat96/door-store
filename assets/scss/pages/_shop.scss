@@ -149,6 +149,10 @@
                 &__number {
                     display: flex;
                     gap: 2px;
+                    input {
+                        border: 1px solid $black;
+                        padding-inline: 3px;
+                    }
                 }
             }
         }

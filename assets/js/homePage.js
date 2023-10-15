@@ -133,7 +133,7 @@ const setPortfolioProducts = async () => {
     $(".fz-1-modern-door-slider").owlCarousel({
       items: 4,
       loop: true,
-      autoplay: false,
+      autoplay: true,
       autoplayTimeout: 1500,
       nav: true,
       navText: [

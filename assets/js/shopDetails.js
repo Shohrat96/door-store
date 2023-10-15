@@ -71,8 +71,8 @@ $('.fz-product-details__img-nav').slick({
 getSingleProduct()
 
 
-const singleRelatedProductTemplate = (item, isPortfolioItem) => {
-    const typeQueryParam = isPortfolioItem ? '&type=portfolio' : ''
+const singleRelatedProductTemplate = (item) => {
+    const typeQueryParam = isPortfolioType ? '&type=portfolio' : ''
     return `
     <div class="col-lg-3 col-md-4 col-6 col-xxs-12">
     <div class="fz-1-single-product">
