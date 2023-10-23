@@ -206,107 +206,240 @@
       "title": "Str-siciliya-14",
       "price": 160,
       "categoryId": "2",
-      "images": ["assets/images/entranceDoors/str-siciliya-14.jpeg"]
+      "images": ["assets/images/entranceDoors/IMG_20230804_172511.jpg"]
     },
     {
       "id": "29",
       "title": "Strelesgullu-85",
       "price": 160,
       "categoryId": "2",
-      "images": ["assets/images/entranceDoors/strelesgullu-85.jpeg"]
+      "images": ["assets/images/entranceDoors/IMG_20230804_173010.jpg"]
     },
     {
       "id": "30",
       "title": "Strelesvengegullu-85",
       "price": 160,
       "categoryId": "2",
-      "images": ["assets/images/entranceDoors/strelesvengegullu-85.jpeg"]
+      "images": ["assets/images/entranceDoors/IMG_20230804_173418.jpg"]
     },
     {
       "id": "31",
       "title": "Qoşa qapı",
       "price": 250,
       "categoryId": "2",
-      "images": ["assets/images/entranceDoors/IMG_20190902_213602_265.jpeg"]
+      "images": ["assets/images/entranceDoors/IMG_20230804_173426.jpg"]
     },
     {
       "id": "32",
-      "title": "Test qapı",
-      "price": 250,
+      "title": "Deko-krem",
+      "price": 165,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/deko-krem-165.jpg"]
+    },
+    {
+      "id": "33",
+      "title": "Deko-orex-kashtan",
+      "price": 165,
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/deko-orex-kastan-165.jpeg"]
+    },
+    {
+      "id": "34",
+      "title": "Deko-venge",
+      "price": 165,
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/deko-venge-165.jpeg"]
+    },
+    {
+      "id": "35",
+      "title": "Italiya-pvx-ag",
+      "price": 225,
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/italiya-pvx-ag-225.jpeg"]
+    },
+    {
+      "id": "36",
+      "title": "Italiya-pvx-ag-suseli",
+      "price": 225,
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/italiya-pvx-ag-suseli-225.jpeg"]
+    },
+    {
+      "id": "37",
+      "title": "Kaskad-ag",
+      "price": 180,
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/kaskad-ag-180.jpeg"]
+    },
+    {
+      "id": "38",
+      "title": "Palma-venge",
+      "price": 180,
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/palma-venge-180.jpeg"]
+    },
+    {
+      "id": "39",
+      "title": "Str-siciliya",
+      "price": 180,
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/str-siciliya-180.jpeg"]
+    },
+    {
+      "id": "40",
+      "title": "IMG_20230804_173757",
+      "price": "X",
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/IMG_20230804_173757.jpg"]
+    },
+    {
+      "id": "41",
+      "title": "IMG_20230804_173807",
+      "price": "X",
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/IMG_20230804_173807.jpg"]
+    },
+    {
+      "id": "42",
+      "title": "IMG_20230804_173915",
+      "price": "X",
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/IMG_20230804_173915.jpg"]
     }
   ],
   "portfolio": [
     {
-      "id": "33",
+      "id": "43",
+      "title": "IMG-20230731-WA0050",
+      "price": "X",
+      "categoryId": "1",
+      "images": ["assets/images/portfolio/IMG-20230731-WA0050.jpg"]
+    },
+    {
+      "id": "44",
+      "title": "IMG-20230731-WA0051",
+      "price": "X",
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/IMG-20230731-WA0051.jpg"]
+    },
+    {
+      "id": "45",
+      "title": "IMG-20230731-WA0053",
+      "price": "X",
+      "categoryId": "1",
+      "images": ["assets/images/portfolio/IMG-20230731-WA0053.jpg"]
+    },
+    {
+      "id": "46",
+      "title": "IMG-20230731-WA0059",
+      "price": "X",
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/IMG-20230731-WA0059.jpg"]
+    },
+    {
+      "id": "47",
+      "title": "IMG-20230731-WA0069",
+      "price": "X",
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/IMG-20230731-WA0069.jpg"]
+    },
+    {
+      "id": "48",
+      "title": "IMG-20230731-WA0071",
+      "price": "X",
+      "categoryId": "1",
+      "images": ["assets/images/roomDoors/IMG-20230731-WA0071.jpg"]
+    },
+    {
+      "id": "49",
       "title": "Nümunə 1",
       "price": 250,
       "categoryId": "1",
       "images": ["assets/images/portfolio/0005.jpeg"]
     },
     {
-      "id": "34",
+      "id": "50",
       "title": "Nümunə 2",
       "price": 250,
       "categoryId": "1",
       "images": ["assets/images/portfolio/0006.jpeg"]
     },
     {
-      "id": "35",
+      "id": "51",
       "title": "Nümunə 3",
       "price": 250,
       "categoryId": "1",
       "images": ["assets/images/portfolio/0007.jpeg"]
     },
     {
-      "id": "36",
+      "id": "52",
       "title": "Nümunə 4",
       "price": 250,
       "categoryId": "1",
       "images": ["assets/images/portfolio/0008.jpeg"]
     },
     {
-      "id": "37",
+      "id": "53",
       "title": "Nümunə 5",
       "price": 250,
       "categoryId": "1",
       "images": ["assets/images/portfolio/0009.jpeg"]
     },
     {
-      "id": "38",
+      "id": "54",
       "title": "Nümunə 6",
       "price": 250,
       "categoryId": "1",
       "images": ["assets/images/portfolio/0010.jpeg"]
     },
     {
-      "id": "39",
+      "id": "55",
       "title": "Nümunə 7",
       "price": 250,
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230618-WA0065.jpeg"]
     },
     {
-      "id": "40",
+      "id": "56",
       "title": "Nümunə 8",
       "price": 250,
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230618-WA0066.jpeg"]
     },
     {
-      "id": "41",
+      "id": "57",
       "title": "Nümunə 9",
       "price": 250,
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230618-WA0067.jpeg"]
     },
     {
-      "id": "42",
+      "id": "58",
       "title": "Nümunə 10",
       "price": 250,
       "categoryId": "1",
       "images": ["assets/images/portfolio/PSX_20190808_123824.jpeg"]
+    },
+    {
+      "id": "59",
+      "title": "Nümunə 11",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["assets/images/portfolio/IMG-20230714-WA0067.jpg"]
+    },
+    {
+      "id": "60",
+      "title": "Nümunə 12",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["assets/images/portfolio/IMG-20230731-WA0032.jpg"]
+    },
+    {
+      "id": "61",
+      "title": "Nümunə 13",
+      "price": 250,
+      "categoryId": "1",
+      "images": ["assets/images/portfolio/IMG-20230731-WA0038.jpg"]
     }
   ]
 }

@@ -705,7 +705,8 @@ const getProducts = async () => {
   const data = await res.json();
   loaderEnd()
 
-  let { products } = data;
+  let { products, portfolio } = data;
+  products = [...products, ...portfolio]
   if (categoryQueryParam === "otaq-qapilari") {
     products = products.filter((item) => item.categoryId === "1");
   }

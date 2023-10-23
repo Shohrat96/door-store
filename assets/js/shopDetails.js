@@ -24,7 +24,7 @@ const getSingleProduct = async () => {
   const data = await res.json()
   const { products, categories, portfolio } = data
 
-  const productsToSearch = isPortfolioType ? portfolio : products
+  const productsToSearch = [...products, ...portfolio]
   const itemMatch = productsToSearch.find(item => item.id === productId)
   if (!itemMatch) {
     alert("Məhsul tapılmadı")
