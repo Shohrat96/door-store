@@ -869,6 +869,12 @@ const sliderContainer = document.getElementById("slider");
 const minInput = document.getElementById("minInput");
 const maxInput = document.getElementById("maxInput");
 
+maxInput.addEventListener('blur', (e) => {
+  if (maxInput.value < 0) {
+    maxInput.value = minInput.value
+  }
+})
+
 noUiSlider.create(sliderContainer, {
   start: [0, 3000],
   connect: true,
@@ -881,20 +887,29 @@ noUiSlider.create(sliderContainer, {
 const slider = sliderContainer.noUiSlider;
 
 // Function to update slider based on inputs
+function handleChange(e) {
+
+  if (isNaN(e.key)) {
+    e.preventDefault()
+    return
+  }
+
+}
 function updateSlider() {
+
   const newMin = parseInt(minInput.value);
   const newMax = parseInt(maxInput.value);
-  this.size = this.value.length;
+
   // Validate inputs and update the slider only if valid
   if (!isNaN(newMin) && !isNaN(newMax) && newMin <= newMax) {
     slider.set([newMin, newMax]);
   }
 }
-
 // Listen for input changes
+minInput.addEventListener("keypress", handleChange);
+maxInput.addEventListener("keypress", handleChange);
 minInput.addEventListener("change", updateSlider);
 maxInput.addEventListener("change", updateSlider);
-
 // Listen for slider update events
 slider.on("update", function (values, handle) {
   // Update input fields when slider changes
