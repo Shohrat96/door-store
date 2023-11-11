@@ -5,7 +5,24 @@ const loaderStart = () => {
   document.querySelector("#pre-loader").style.visibility = "visible";
   document.querySelector("#pre-loader").style.display = "block";
 };
+function isMobileScreen() {
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    return true
+  }
+  return false
+}
+const gridViewBtn = document.querySelector(".grid-view");
+const listViewBtn = document.querySelector(".list-view");
 
+window.addEventListener('DOMContentLoaded', e => {
+  const productsContainer = document.querySelector(".fz-inner-products-container")
+  const isMobile = isMobileScreen()
+  if (isMobile) {
+    listViewBtn.classList.add("active")
+    gridViewBtn.classList.remove("active")
+    productsContainer.classList.add("list-view-on")
+  }
+})
 // loaderStart()
 
 const loaderEnd = () => {
@@ -567,8 +584,7 @@ $(".fz-1-brands").owlCarousel({
 });
 
 /*--- PRODUCT VIEW TYPE CHANGE JS START ---*/
-const gridViewBtn = document.querySelector(".grid-view");
-const listViewBtn = document.querySelector(".list-view");
+
 const productsRow = document.querySelectorAll(
   ".fz-inner-products-container .row > *"
 );
