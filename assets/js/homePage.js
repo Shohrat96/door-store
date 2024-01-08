@@ -9,17 +9,16 @@ window.addEventListener("load", () => {
 
 const newProductsSection = document.querySelector(".fz-1-products-container");
 
-
 const singleProduct = (product, type) => {
-  const {images, price, title, id} = product
+  const { images, price, title, id } = product;
 
+  const isPortfolioSliderImage = type === "portfolio";
+  const linkToNavigate = isPortfolioSliderImage
+    ? `/shop-details.html?productId=${id}&type=portfolio`
+    : `/shop-details.html?productId=${id}`;
 
-  const isPortfolioSliderImage = type === 'portfolio'
-  const linkToNavigate = isPortfolioSliderImage ? `/shop-details.html?productId=${id}&type=portfolio` :
-  `/shop-details.html?productId=${id}`
-
-  const mainUrl = images[0]
-  return (`
+  const mainUrl = images[0];
+  return `
   <div class="fz-1-single-product">
     <div class="fz-single-product__img">
       <a style="width: 100%;" href=${linkToNavigate}>
@@ -39,20 +38,20 @@ const singleProduct = (product, type) => {
       </p>
     </div>
   </div>
-  `)
-}
+  `;
+};
 
 const setLatestProducts = async () => {
-  const res = await fetch("../products/products.json")
-  const data = await res.json()
+  const res = await fetch("/door-store/products/products.json");
+  const data = await res.json();
   if (data.products.length > 0) {
-    newProductsSection.innerHTML = ''
+    newProductsSection.innerHTML = "";
 
-    data.products.slice(0, 15).forEach(element => {
-      const singleLatestEl = singleProduct(element).trim()
-      const tempWrapperElement = document.createElement('div')
-      tempWrapperElement.innerHTML = singleLatestEl
-      newProductsSection.append(tempWrapperElement.firstChild)
+    data.products.slice(0, 15).forEach((element) => {
+      const singleLatestEl = singleProduct(element).trim();
+      const tempWrapperElement = document.createElement("div");
+      tempWrapperElement.innerHTML = singleLatestEl;
+      newProductsSection.append(tempWrapperElement.firstChild);
     });
     $(".fz-1-products-container").slick({
       slidesToShow: 5,
@@ -75,7 +74,7 @@ const setLatestProducts = async () => {
             slidesToScroll: 4,
           },
         },
-    
+
         {
           breakpoint: 992,
           settings: {
@@ -83,7 +82,7 @@ const setLatestProducts = async () => {
             slidesToScroll: 3,
           },
         },
-    
+
         {
           breakpoint: 768,
           settings: {
@@ -91,7 +90,7 @@ const setLatestProducts = async () => {
             slidesToScroll: 2,
           },
         },
-    
+
         {
           breakpoint: 576,
           settings: {
@@ -99,7 +98,7 @@ const setLatestProducts = async () => {
             slidesToScroll: 2,
           },
         },
-    
+
         {
           breakpoint: 480,
           settings: {
@@ -110,25 +109,26 @@ const setLatestProducts = async () => {
       ],
     });
   }
-}
-setLatestProducts()
-
+};
+setLatestProducts();
 
 // set portfolio products
 
-const portfolioProductsContainer = document.querySelector(".fz-1-modern-door-slider");
+const portfolioProductsContainer = document.querySelector(
+  ".fz-1-modern-door-slider"
+);
 
 const setPortfolioProducts = async () => {
-  const res = await fetch("../products/products.json")
-  const data = await res.json()
+  const res = await fetch("/door-store/products/products.json");
+  const data = await res.json();
   if (data.portfolio.length > 0) {
-    portfolioProductsContainer.innerHTML = ''
+    portfolioProductsContainer.innerHTML = "";
 
-    data.portfolio.forEach(element => {
-      const singleLatestEl = singleProduct(element, 'portfolio').trim()
-      const tempWrapperElement = document.createElement('div')
-      tempWrapperElement.innerHTML = singleLatestEl
-      portfolioProductsContainer.append(tempWrapperElement.firstChild)
+    data.portfolio.forEach((element) => {
+      const singleLatestEl = singleProduct(element, "portfolio").trim();
+      const tempWrapperElement = document.createElement("div");
+      tempWrapperElement.innerHTML = singleLatestEl;
+      portfolioProductsContainer.append(tempWrapperElement.firstChild);
     });
     $(".fz-1-modern-door-slider").owlCarousel({
       items: 4,
@@ -147,30 +147,29 @@ const setPortfolioProducts = async () => {
         0: {
           items: 1,
         },
-    
+
         480: {
           items: 2,
         },
-    
+
         576: {
           items: 2,
         },
-    
+
         768: {
           items: 3,
         },
-    
+
         992: {
           items: 4,
         },
-    
+
         1200: {
           items: 4,
         },
       },
     });
-
   }
-}
+};
 
-setPortfolioProducts()
+setPortfolioProducts();
