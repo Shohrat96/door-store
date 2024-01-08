@@ -6,23 +6,29 @@ const loaderStart = () => {
   document.querySelector("#pre-loader").style.display = "block";
 };
 function isMobileScreen() {
-  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-    return true
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    return true;
   }
-  return false
+  return false;
 }
 const gridViewBtn = document.querySelector(".grid-view");
 const listViewBtn = document.querySelector(".list-view");
 
-window.addEventListener('DOMContentLoaded', e => {
-  const productsContainer = document.querySelector(".fz-inner-products-container")
-  const isMobile = isMobileScreen()
+window.addEventListener("DOMContentLoaded", (e) => {
+  const productsContainer = document.querySelector(
+    ".fz-inner-products-container"
+  );
+  const isMobile = isMobileScreen();
   if (isMobile) {
-    listViewBtn.classList.add("active")
-    gridViewBtn.classList.remove("active")
-    productsContainer.classList.add("list-view-on")
+    listViewBtn.classList.add("active");
+    gridViewBtn.classList.remove("active");
+    productsContainer.classList.add("list-view-on");
   }
-})
+});
 // loaderStart()
 
 const loaderEnd = () => {
@@ -30,10 +36,10 @@ const loaderEnd = () => {
   document.querySelector("#pre-loader").style.opacity = 0;
   document.querySelector("#pre-loader").style.visibility = "hidden";
   document.querySelector("#pre-loader").style.display = "none";
-}
+};
 window.addEventListener("load", () => {
   // loaderEnd();
-  loaderEnd()
+  loaderEnd();
 });
 // PRELOADER END
 
@@ -495,7 +501,7 @@ tl_2
   )
   .to($fz2Heading, 0.5, { alpha: 0, ease: Power1.easeOut }, "+=5");
 
-// 
+//
 
 $(".filter-navs button").on("click", function () {
   // Remove active class from all buttons
@@ -598,50 +604,49 @@ const productsContainerRow = document.querySelector(
   ".fz-inner-products-container .row"
 );
 const addToFavorite = (item) => {
-    // const {id, title, price, imageUrl, categoryId} = item
-    let wishList = JSON.parse(localStorage.getItem('wishlist')) || []
+  // const {id, title, price, imageUrl, categoryId} = item
+  let wishList = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-    if (wishList.some(door => door.id === item.id)) {
-        wishList = wishList.filter(el => el.id !== item.id)
-        Toastify({
-          text: "Bəyəndiklərimdən silindi",
-          duration: 3000,
-          close: true,
-          gravity: "top", // `top` or `bottom`
-          position: "right", // `left`, `center` or `right`
-          stopOnFocus: true, // Prevents dismissing of toast on hover
-          style: {
-            background: "linear-gradient(to right, #fdf11d, #fcb045)",
-          },
-          // Use template to customize content
-          template: '<div class="toastify-content"><span class="toastify-text">Bəyəndiklərimdən silindi</span><span class="toastify-secondary-text">Secondary Text Goes Here</span></div>',
-          onClick: function() {} // Callback after click
-        }).showToast();
-        
-    } else {
-        wishList.push(item)
-        Toastify({
-          text: "Bəyəndiklərimə əlavə edildi",
-          duration: 3000,
-          close: true,
-          gravity: "top", // `top` or `bottom`
-          position: "right", // `left`, `center` or `right`
-          stopOnFocus: true, // Prevents dismissing of toast on hover
-          style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
-          },
-          // Use template to customize content
-          template: '<div class="toastify-content"><span class="toastify-text">Bəyəndiklərimdən silindi</span><span class="toastify-secondary-text">Secondary Text Goes Here</span></div>',
-          onClick: function() {} // Callback after click
-        }).showToast();
-        
-    }
-    localStorage.setItem("wishlist", JSON.stringify(wishList))
-    getProducts()
-}
+  if (wishList.some((door) => door.id === item.id)) {
+    wishList = wishList.filter((el) => el.id !== item.id);
+    Toastify({
+      text: "Bəyəndiklərimdən silindi",
+      duration: 3000,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #fdf11d, #fcb045)",
+      },
+      // Use template to customize content
+      template:
+        '<div class="toastify-content"><span class="toastify-text">Bəyəndiklərimdən silindi</span><span class="toastify-secondary-text">Secondary Text Goes Here</span></div>',
+      onClick: function () {}, // Callback after click
+    }).showToast();
+  } else {
+    wishList.push(item);
+    Toastify({
+      text: "Bəyəndiklərimə əlavə edildi",
+      duration: 3000,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+      // Use template to customize content
+      template:
+        '<div class="toastify-content"><span class="toastify-text">Bəyəndiklərimdən silindi</span><span class="toastify-secondary-text">Secondary Text Goes Here</span></div>',
+      onClick: function () {}, // Callback after click
+    }).showToast();
+  }
+  localStorage.setItem("wishlist", JSON.stringify(wishList));
+  getProducts();
+};
 const singleProductTemplate = (imageUrl, title, price, id, categoryId) => {
-
-    return `
+  return `
     <div class="col-xl-4 col-md-4 col-6 col-xxs-12">
     <div class="fz-1-single-product">
     <div class="fz-single-product__img">
@@ -654,7 +659,9 @@ const singleProductTemplate = (imageUrl, title, price, id, categoryId) => {
     </div>
     
     <div class="fz-single-product__txt">
-        <span class="fz-single-product__category list-view-text">${categoryId === '1' ? 'Otaq Qapısı' : 'Giriş qapısı'}</span>
+        <span class="fz-single-product__category list-view-text">${
+          categoryId === "1" ? "Otaq Qapısı" : "Giriş qapısı"
+        }</span>
         <a href="shop-details.html?productId=${id}" class="fz-single-product__title">${title}</a>
         <div class="fz-single-product__price-rating">
             <p class="fz-single-product__price">
@@ -681,7 +688,7 @@ const singleProductTemplate = (imageUrl, title, price, id, categoryId) => {
     </div>
     </div>
     `;
-} 
+};
 
 const sortProducts = (sortOption, products) => {
   let sortedProducts;
@@ -713,16 +720,16 @@ let sortOption = null;
 let priceRange = null;
 
 const getProducts = async () => {
-  loaderStart()
+  loaderStart();
   productsContainerRow.innerHTML = "";
   const categoryQueryParam = getQueryParamValue("category");
 
-  const res = await fetch("../../products/products.json");
+  const res = await fetch("../products/products.json");
   const data = await res.json();
-  loaderEnd()
+  loaderEnd();
 
   let { products, portfolio } = data;
-  products = [...products, ...portfolio]
+  products = [...products, ...portfolio];
   if (categoryQueryParam === "otaq-qapilari") {
     products = products.filter((item) => item.categoryId === "1");
   }
@@ -736,20 +743,26 @@ const getProducts = async () => {
     products = sortProducts(sortOption, products);
   }
 
-  const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || []
+  const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
 
   products.forEach((item, idx) => {
-    const itemIsInWishlist = wishlistItems.some(product => product.id === item.id)
+    const itemIsInWishlist = wishlistItems.some(
+      (product) => product.id === item.id
+    );
 
-    const addToWishlistBtn = document.createElement("button")
-    addToWishlistBtn.classList.add("fz-add-to-wishlist-btn")
+    const addToWishlistBtn = document.createElement("button");
+    addToWishlistBtn.classList.add("fz-add-to-wishlist-btn");
     addToWishlistBtn.addEventListener("click", (e) => {
-        addToFavorite(item)
-    })
+      addToFavorite(item);
+    });
     addToWishlistBtn.innerHTML = `
-        <span class="btn-txt">${itemIsInWishlist ? 'Bəyəndiklərimdən sil' : 'Bəyəndiklərimə əlavə et'}</span>
-        <span class="btn-icon ${itemIsInWishlist ? 'btn-icon--active' : ''}"><i class="fa-light fa-heart"></i></span>
-    `
+        <span class="btn-txt">${
+          itemIsInWishlist ? "Bəyəndiklərimdən sil" : "Bəyəndiklərimə əlavə et"
+        }</span>
+        <span class="btn-icon ${
+          itemIsInWishlist ? "btn-icon--active" : ""
+        }"><i class="fa-light fa-heart"></i></span>
+    `;
 
     const newEl = document.createElement("div");
     newEl.innerHTML = singleProductTemplate(
@@ -760,16 +773,20 @@ const getProducts = async () => {
       item.categoryId
     ).trim();
     productsContainerRow.append(newEl.firstChild);
-    const wishlistBtnWrapper = document.querySelectorAll(".fz-single-product__actions:not([class*=' '])")[idx]
-    const wishlistBtnWrapperListView = document.querySelectorAll(".fz-single-product__actions.list-view-text")[idx]
+    const wishlistBtnWrapper = document.querySelectorAll(
+      ".fz-single-product__actions:not([class*=' '])"
+    )[idx];
+    const wishlistBtnWrapperListView = document.querySelectorAll(
+      ".fz-single-product__actions.list-view-text"
+    )[idx];
 
     // the same add to wish logic for list view
     const addToWishInListView = addToWishlistBtn.cloneNode(true);
     addToWishInListView.addEventListener("click", () => {
-        addToFavorite(item)
-    })
-    wishlistBtnWrapperListView.appendChild(addToWishInListView)
-    wishlistBtnWrapper.appendChild(addToWishlistBtn)
+      addToFavorite(item);
+    });
+    wishlistBtnWrapperListView.appendChild(addToWishInListView);
+    wishlistBtnWrapper.appendChild(addToWishlistBtn);
   });
 };
 getProducts();
@@ -885,11 +902,11 @@ const sliderContainer = document.getElementById("slider");
 const minInput = document.getElementById("minInput");
 const maxInput = document.getElementById("maxInput");
 
-maxInput.addEventListener('blur', (e) => {
+maxInput.addEventListener("blur", (e) => {
   if (maxInput.value < 0) {
-    maxInput.value = minInput.value
+    maxInput.value = minInput.value;
   }
-})
+});
 
 noUiSlider.create(sliderContainer, {
   start: [0, 3000],
@@ -904,15 +921,12 @@ const slider = sliderContainer.noUiSlider;
 
 // Function to update slider based on inputs
 function handleChange(e) {
-
   if (isNaN(e.key)) {
-    e.preventDefault()
-    return
+    e.preventDefault();
+    return;
   }
-
 }
 function updateSlider() {
-
   const newMin = parseInt(minInput.value);
   const newMax = parseInt(maxInput.value);
 
