@@ -724,7 +724,7 @@ const getProducts = async () => {
   productsContainerRow.innerHTML = "";
   const categoryQueryParam = getQueryParamValue("category");
 
-  const res = await fetch("products/products.json");
+  const res = await fetch("/door-store/products/products.json");
   const data = await res.json();
   loaderEnd();
 
