@@ -15,7 +15,7 @@
     {
       "id": "1",
       "title": "Brown-door-001",
-      "price": 150,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/brown-door-001.jpeg"]
     },
@@ -50,203 +50,203 @@
     {
       "id": "6",
       "title": "Komfort-ag-59",
-      "price": 180,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/komfort-ag-59.jpeg"]
     },
     {
       "id": "7",
       "title": "Laguna-ag-65",
-      "price": 180,
+      "price": 150,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/laguna-ag-65.jpeg"]
     },
     {
       "id": "8",
       "title": "Leyla-54",
-      "price": 180,
+      "price": 250,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/leyla-54.jpeg"]
     },
     {
       "id": "9",
       "title": "Luchiya-69",
-      "price": 180,
+      "price": 250,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/luchiya-69.jpeg"]
     },
     {
       "id": "10",
       "title": "Luna-venge-5",
-      "price": 180,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/luna-venge-5.jpeg"]
     },
     {
       "id": "11",
       "title": "Monduella-79",
-      "price": 170,
+      "price": 250,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/monduella-79.jpeg"]
     },
     {
       "id": "12",
       "title": "Nota-2",
-      "price": 170,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/nota-2.jpeg"]
     },
     {
       "id": "13",
       "title": "Orex-sade-9",
-      "price": 170,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/orex-sade-9.jpeg"]
     },
     {
       "id": "14",
       "title": "Palma-gullu",
-      "price": 170,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/palma-gullu.jpeg"]
     },
     {
       "id": "15",
       "title": "Palmaorex-83",
-      "price": 170,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/palmaorex-83.jpeg"]
     },
     {
       "id": "16",
       "title": "Palmavenge-83",
-      "price": 170,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/palmavenge-83.jpeg"]
     },
     {
       "id": "17",
       "title": "Palmavengegullu-85",
-      "price": 170,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/palmavengegullu-85.jpeg"]
     },
     {
       "id": "18",
       "title": "Pillekan-83",
-      "price": 190,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/pillekan-83.jpeg"]
     },
     {
       "id": "19",
       "title": "Qluxoy-72",
-      "price": 190,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/qluxoy-72.jpeg"]
     },
     {
       "id": "20",
       "title": "Safari-kappucino-10",
-      "price": 190,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/safari-kappucino-10.jpeg"]
     },
     {
       "id": "21",
       "title": "Sebeke-47",
-      "price": 190,
+      "price": 250,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/sebeke-47.jpeg"]
     },
     {
       "id": "22",
       "title": "Siciliya-sade-8",
-      "price": 190,
+      "price": 150,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/siciliya-sade-8.jpeg"]
     },
     {
       "id": "23",
       "title": "Solo-denver-3",
-      "price": 190,
+      "price": 150,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/solo-denver-3.jpeg"]
     },
     {
       "id": "24",
       "title": "Solo-venge-6",
-      "price": 190,
+      "price": 150,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/solo-venge-6.jpeg"]
     },
     {
       "id": "25",
       "title": "Str-siciliya-14",
-      "price": 160,
+      "price": 150,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/str-siciliya-14.jpeg"]
     },
     {
       "id": "26",
       "title": "Strelesgullu-85",
-      "price": 160,
+      "price": 150,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/strelesgullu-85.jpeg"]
     },
     {
       "id": "27",
       "title": "Strelesvengegullu-85",
-      "price": 160,
+      "price": 150,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/strelesvengegullu-85.jpeg"]
     },
     {
       "id": "28",
-      "title": "Str-siciliya-14",
-      "price": 160,
+      "title": "Best-Turkiye-qehveyi",
+      "price": 800,
       "categoryId": "2",
       "images": ["assets/images/entranceDoors/IMG_20230804_172511.jpg"]
     },
     {
       "id": "29",
-      "title": "Strelesgullu-85",
-      "price": 160,
+      "title": "Bunker-qara-1",
+      "price": 830,
       "categoryId": "2",
       "images": ["assets/images/entranceDoors/IMG_20230804_173010.jpg"]
     },
     {
       "id": "30",
-      "title": "Strelesvengegullu-85",
-      "price": 160,
+      "title": "Bunker-2",
+      "price": 750,
       "categoryId": "2",
       "images": ["assets/images/entranceDoors/IMG_20230804_173418.jpg"]
     },
     {
       "id": "31",
-      "title": "Qoşa qapı",
-      "price": 250,
+      "title": "Bunker-3",
+      "price": 830,
       "categoryId": "2",
       "images": ["assets/images/entranceDoors/IMG_20230804_173426.jpg"]
     },
     {
       "id": "32",
       "title": "Deko-krem",
-      "price": 165,
+      "price": 150,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/deko-krem-165.jpg"]
     },
     {
       "id": "33",
       "title": "Deko-orex-kashtan",
-      "price": 165,
+      "price": 150,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/deko-orex-kastan-165.jpeg"]
     },
     {
       "id": "34",
       "title": "Deko-venge",
-      "price": 165,
+      "price": 150,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/deko-venge-165.jpeg"]
     },
@@ -274,35 +274,35 @@
     {
       "id": "38",
       "title": "Palma-venge",
-      "price": 180,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/palma-venge-180.jpeg"]
     },
     {
       "id": "39",
       "title": "Str-siciliya",
-      "price": 180,
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/str-siciliya-180.jpeg"]
     },
     {
       "id": "40",
-      "title": "IMG_20230804_173757",
-      "price": "X",
+      "title": "Madrid-vanil-qluxoy",
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/IMG_20230804_173757.jpg"]
     },
     {
       "id": "41",
-      "title": "IMG_20230804_173807",
-      "price": "X",
+      "title": "Kalipso-1",
+      "price": 230,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/IMG_20230804_173807.jpg"]
     },
     {
       "id": "42",
-      "title": "IMG_20230804_173915",
-      "price": "X",
+      "title": "Persona-1",
+      "price": 230,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/IMG_20230804_173915.jpg"]
     }
@@ -310,134 +310,134 @@
   "portfolio": [
     {
       "id": "43",
-      "title": "IMG-20230731-WA0050",
-      "price": "X",
+      "title": "Kalipso-2",
+      "price": 230,
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230731-WA0050.jpg"]
     },
     {
       "id": "44",
-      "title": "IMG-20230731-WA0051",
-      "price": "X",
+      "title": "Afrodita",
+      "price": 230,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/IMG-20230731-WA0051.jpg"]
     },
     {
       "id": "45",
-      "title": "IMG-20230731-WA0053",
-      "price": "X",
+      "title": "Katerina",
+      "price": 180,
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230731-WA0053.jpg"]
     },
     {
       "id": "46",
-      "title": "IMG-20230731-WA0059",
-      "price": "X",
+      "title": "K2-2-Xonca",
+      "price": 180,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/IMG-20230731-WA0059.jpg"]
     },
     {
       "id": "47",
-      "title": "IMG-20230731-WA0069",
-      "price": "X",
+      "title": "Madrid-lesnoy-orex",
+      "price": 220,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/IMG-20230731-WA0069.jpg"]
     },
     {
       "id": "48",
-      "title": "IMG-20230731-WA0071",
-      "price": "X",
+      "title": "Amerikanka-ag",
+      "price": 120,
       "categoryId": "1",
       "images": ["assets/images/roomDoors/IMG-20230731-WA0071.jpg"]
     },
     {
       "id": "49",
       "title": "Nümunə 1",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/0005.jpeg"]
     },
     {
       "id": "50",
       "title": "Nümunə 2",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/0006.jpeg"]
     },
     {
       "id": "51",
       "title": "Nümunə 3",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/0007.jpeg"]
     },
     {
       "id": "52",
       "title": "Nümunə 4",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/0008.jpeg"]
     },
     {
       "id": "53",
       "title": "Nümunə 5",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/0009.jpeg"]
     },
     {
       "id": "54",
       "title": "Nümunə 6",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/0010.jpeg"]
     },
     {
       "id": "55",
       "title": "Nümunə 7",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230618-WA0065.jpeg"]
     },
     {
       "id": "56",
       "title": "Nümunə 8",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230618-WA0066.jpeg"]
     },
     {
       "id": "57",
       "title": "Nümunə 9",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230618-WA0067.jpeg"]
     },
     {
       "id": "58",
       "title": "Nümunə 10",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/PSX_20190808_123824.jpeg"]
     },
     {
       "id": "59",
       "title": "Nümunə 11",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230714-WA0067.jpg"]
     },
     {
       "id": "60",
       "title": "Nümunə 12",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230731-WA0032.jpg"]
     },
     {
       "id": "61",
       "title": "Nümunə 13",
-      "price": 250,
+      "price": "",
       "categoryId": "1",
       "images": ["assets/images/portfolio/IMG-20230731-WA0038.jpg"]
     }
